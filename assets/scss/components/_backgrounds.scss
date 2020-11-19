@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > Backgrounds
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@each $color, $value in $bg-colors {
+    .bg--#{$color} {
+        background-color: $value;
+    }
+
+    %bg--#{$color} {
+        background-color: $value;
+    }
+}

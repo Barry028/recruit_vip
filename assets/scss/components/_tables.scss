@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > Tables
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table--ver1 {
+    table-layout: fixed;
+    text-align: center;
+    padding: .5rem;
+    background-color: $white;
+}
+
+.table--ver1 thead {
+    background-color: $default;
+    border-bottom: ($border-width * 2) $border-style-solid $grey-200;
+}
+
+.table--ver1 th {
+    font-weight: $font-weight-bolder;
+    padding: .75rem .25rem .5rem;
+    font-size: $font-size-xs;
+}
+
+.table--ver1 tr {
+    border-bottom: $border-width $border-style-dotted $grey-200;
+}
+
+.table--ver1 td {
+    padding: 1rem .25rem .75rem;
+    font-size: $font-size-xs;
+}
+
+.table--ver1 a {
+    font-size: $font-size-sm;
+}
+
+.table--ver1-foot {
+    background-color: $default;
+    border-bottom: $border-width $border-style-dotted $grey-200;
+    padding: .5rem 1.375rem;
+    font-size: $font-size-xs;
+}
+
+@media (max-width: $screen-xs-min) {
+    .table--ver1 .table--ver1-foot {
+        padding-right: .5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.table--ver2 {
+    font-size: $font-size-md;
+    margin-bottom: 2rem;
+    background-color: $white;
+}
+
+.table--ver2 h6 {
+    color: $dark;
+    font-size: $font-size-base;
+    font-weight: 500;
+}
+
+.table--ver2 th {
+    padding: 1.5rem .25rem;
+    text-align: center;
+}
+
+.table--ver2 td {
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.table--ver2 thead {
+    border-bottom: 2px $border-style-solid $border-color_2;
+}
+
+.table--ver2 th,
+.table--ver2 td {
+    border-right: 1px $border-style-solid $border-color_2;
+    border-bottom: 1px $border-style-solid $border-color_2;
+}
+
+.table--ver2 tbody tr:nth-of-type(odd) {
+    background-color: $azure;
+}
+
+.table--ver3 {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: $white;
+}
+
+.table--ver3 th,
+.table--ver3 td {
+    padding: .5rem 1rem;
+    vertical-align: top;
+    border: 1px $border-style-solid $border-color_2;
+}
+
+.table--ver3 thead th {
+    vertical-align: bottom;
+    border-bottom: 2px $border-style-solid $border-color_2;
+}
+
+.table--ver3 tbody + tbody {
+    border-top: 2px $border-style-solid $border-color_2;
+}
+
+.thead-light th {
+    color: $grey;
+    background-color: #e9ecef;
+    border-color: $border-color_2;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: $grey-200;
+}
+
+.table--dark {
+    color: $white;
+    background-color: $dark;
+}
+
+.table--dark th,
+.table--dark td,
+.table--dark thead th {
+    border-color: $inverse;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: darken($white, 5%);
+}
+
+.table--dark.table-hover tbody tr:hover {
+    color: $white;
+    background-color: rgba($dark, 0.075);
+}
+
+.table--hover.table--hover tbody tr:hover {
+    color: $grey;
+    background-color: $default;
+}

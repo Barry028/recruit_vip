@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <title>1111 求才招募系統 - 設計規範</title>
+    <!-- Vender  -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark-reasonable.min.css">
+    <!-- iCon  -->
+    <link rel="stylesheet" type="text/css" href="vendor/icon-reGui/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/icon-recruit/style.css"> <!-- Vendor  -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--     <script src="js/loading.js"></script> -->
+    <!--[if lte IE 9]>
+        <script src="vender/html5shiv/dist/html5shiv.min.js"></script>
+        <script src="vender/respond/dest/respond.min.js"></script>
+        <script src="vender/Placeholders/dist/placeholders.jquery.min.js"></script>
+        <script src="vender/Placeholders/dist/placeholders.prototype.min.js"></script>
+        <script src="vender/Placeholders/dist/placeholders.yui3.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <aside class="gui-side-bar" id="guiAside">
+        <nav class="gui-side-nav">
+            <div class="side-title">
+                <i class="nre-recruit-s-wt logo--sm" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </i>
+                <br>
+                招募系統 GUIDELINE
+            </div>
+            <ul id="guideMenu">
+                <li>
+                    <a href="#about">
+                        <i class="re-g-gd-compass-guide" aria-hidden="true"></i>
+                        <font>設計規範　GUIDELINE</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#logo">
+                        <i class="re-g-df--ribbon-flag" aria-hidden="true"></i>
+                        <font>品　　牌　BRAND LOGOS</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#palette">
+                        <i class="re-g-gd-design-painter-palette" aria-hidden="true"></i>
+                        <font>色　　彩　COLOR PALETTE</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#typography">
+                        <i class="re-g-gd-design-catalog-brochure" aria-hidden="true"></i>
+                        <font>字　　體　TYPOGRAPHY</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#layout">
+                        <i class="re-g-applications-webpage-elements" aria-hidden="true"></i>
+                        <font>佈　　局　LAYOUT</font>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#animation">
+                        <i class="re-g-gd-gesture-click-swipe" aria-hidden="true"></i>
+                        <font>動　　畫　ANIMATION</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#button">
+                        <i class="re-g-gd-handcrafts-clothes-button" aria-hidden="true"></i>
+                        <font>按　　鈕　BUTTON</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#alerts">
+                        <i class="re-g-id-christmas-bell" aria-hidden="true"></i>
+                        <font>通　　知　ALERTS</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#badge">
+                        <i class="re-g-gd-kitchen-bar-empty-plate" aria-hidden="true"></i>
+                        <font>徽　　章　BADGE</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#form">
+                        <i class="re-g-gd-design-desktop-design-diamond" aria-hidden="true"></i>
+                        <font>表單元素　FORM</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#table">
+                        <i class="re-g-gd-applications-page-windows" aria-hidden="true"></i>
+                        <font>表　　格　TABLE</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#toolstip">
+                        <i class="re-g-df-message-notifications" aria-hidden="true"></i>
+                        <font>提示泡泡　TOOLSTIP</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#toast">
+                        <i class="re-g-df-toast" aria-hidden="true"></i>
+                        <font>吐司訊息　TOAST</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#background">
+                        <i class="re-g-gd-theme" aria-hidden="true"></i>
+                        <font>背景遮罩　BACKGROUND</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#boxshadow">
+                        <i class="re-g-df-apps-layers" aria-hidden="true"></i>
+                        <font>陰　　影　SHADOW</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="#icons">
+                        <i class="re-g-df-photography-face-tracking" aria-hidden="true"></i>
+                        <font>圖　　標　ICONS</font>
+                    </a>
+                </li> -->
+            </ul>
+        </nav>
+    </aside>
+    <main class="gui-main-cnt" id="guiMain">
+        <header class="gui-header bg--white">
+            <div class="container-fluid">
+                <h1 class="cf">
+                    <button class="btn--neu" id="guiMenu">
+                        <div class="lt-side-menu in-bk-mid">
+                            <span class="menu-icon__line menu-icon__line-left"></span>
+                            <span class="menu-icon__line"></span>
+                            <span class="menu-icon__line menu-icon__line-right"></span>
+                        </div>
+                    </button>
+                    <a href="javascript:;" class="in-bk-mid">
+                        <i class="nre-recruit-dk logo--md block" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </i>
+                    </a>
+                    <font class="text--16 ml-8 in-bk-mid">Guideline</font>
+                </h1>
+                <div class="gui-update">
+                    <i class="re-g-df-workspace-support-calendar-date"></i>
+                    2020 / 11 / 20 更新
+                </div>
+            </div>
+        </header>
+        <section class="gui-about scrollspy" id="Guideline">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gui-icon-heading-ver1">
+                        <h3 class="gui-icon-heading-ver1-hd" data-heading="ABOUT">設計規範</h3>
+                        <div class="gui-icon-heading-ver1-bd">
+                            <i class="re-g-gd-compass-guide" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <h2>此為
+                        設計規範，SCSS 檔案主要分成 <big class="text--tertiary">6</big> 隻：
+                        <small class="text--smoke">(最後會再進行合併)</small>
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 col-md-8">
+                        <ul>
+                            <li data-number="1">
+                                <strong>Helpers</strong>
+                                <p>設定網站設計時用到的全域變數，字型等等，例如顏色、斷點、字型等等變數設定</p>
+                            </li>
+                            <li data-number="2">
+                                <strong>Base</strong>
+                                <p>Css Reset 以及一些基本設定</p>
+                            </li>
+                            <li data-number="3">
+                                <strong>Layout</strong>
+                                <p>格線系統以及頁面的共用區塊</p>
+                            </li>
+                            <li data-number="4">
+                                <strong>Components</strong>
+                                <p>元件類的樣式都放在這邊</p>
+                            </li>
+                            <li data-number="5">
+                                <strong>Pages</strong>
+                                <p>頁面的樣式都在這邊</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <img src="img/rocket.svg" alt="rocket">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gui-block scrollspy" id="logo">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gui-icon-heading-ver1">
+                        <h3 class="gui-icon-heading-ver1-hd" data-heading="BRAND LOGO">品牌</h3>
+                        <div class="gui-icon-heading-ver1-bd">
+                            <i class="re-g-df-ones" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="gui-cnt-row">
+                    <div class="col-lg-12">
+                        <h4 class="gui-sub-heading-ver1">
+                            <font>Svg</font>
+                            <big>Img Logos</big>
+                        </h4>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="control-card control-card--ver1 bg--white shd-lt">
+                            <div class="mask mask_square"></div>
+                            <div class="card-inner">
+                                <img src="img/recruit-dk.svg" alt="1111 求才招募系統">
+                            </div>
+                        </div>
+                        <a class="code-accordions">
+                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
+                            <span class="in-bk-mid">Code</span>
+                        </a>
+                        <pre><code class="hljs code xml">&lt;img src="img/recruit-dk.svg" alt="1111 求才招募系統"&gt;</code></pre>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="control-card control-card--ver1 bg--dark shd-lt">
+                            <div class="mask mask_square opt--24"></div>
+                            <div class="card-inner">
+                                <img src="img/recruit-wt.svg" alt="1111 求才招募系統">
+                            </div>
+                        </div>
+                        <a class="code-accordions">
+                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
+                            <span class="in-bk-mid">Code</span>
+                        </a>
+                        <pre><code class="hljs code xml">&lt;img src="img/recruit-wt.svg" alt="1111 求才招募系統"&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="gui-cnt-row">
+                    <div class="col-lg-12">
+                        <h4 class="gui-sub-heading-ver1">
+                            <font>iCon</font>
+                            <big>iCon Logos</big>
+                        </h4>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="control-card control-card--ver1 bg--white shd-lt">
+                            <div class="mask mask_square"></div>
+                            <div class="card-inner">
+                                <i class="nre-recruit-dk logo--md" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </i>
+                                <i class="nre-recruit-s-dk logo--md" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </i>
+                            </div>
+                        </div>
+                        <a class="code-accordions">
+                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
+                            <span class="in-bk-mid">Code</span>
+                        </a>
+                        <pre><code class="hljs code xml">&lt;i class="nre-recruit-dk logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;<br>&lt;i class="nre-recruit-s-dk logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;</code></pre>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="control-card control-card--ver1 bg--dark shd-lt">
+                            <div class="mask mask_square opt--24"></div>
+                            <div class="card-inner">
+                                <i class="nre-recruit-wt logo--md" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </i>
+                                <i class="nre-recruit-s-wt logo--md" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </i>
+                            </div>
+                        </div>
+                        <a class="code-accordions">
+                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
+                            <span class="in-bk-mid">Code</span>
+                        </a>
+                        <pre><code class="hljs code xml">&lt;i class="nre-recruit-wt logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;<br>&lt;i class="nre-recruit-s-wt logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="gui-block scrollspy" id="palette">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gui-icon-heading-ver1">
+                        <h3 class="gui-icon-heading-ver1-hd" data-heading="Color Palette">色彩</h3>
+                        <div class="gui-icon-heading-ver1-bd">
+                            <i class="re-g-gd-design-painter-palette" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="gui-cnt-row">
+                    <h4 class="gui-sub-heading-ver1">
+                        <font>Themes</font>
+                        <big>Themes Palette</big>
+                    </h4>
+                    <ul class="list-palete">
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--primary">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">PRIMARY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#248dc1</span>,
+                                <span class="palete-color__code palete-color__darken__code">#1e75a1</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--secondary">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SECONDARY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#3051d3</span>,
+                                <span class="palete-color__code palete-color__darken__code">#2744b6</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--tertiary">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">TERTIARY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#76b8d8</span>,
+                                <span class="palete-color__code palete-color__darken__code">#58a9d0</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--success">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SUCCESS</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#93be52</span>,
+                                <span class="palete-color__code palete-color__darken__code">#80aa40</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--danger">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">DANGER</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#fc6180</span>,
+                                <span class="palete-color__code palete-color__darken__code">#fb3b62</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--warning">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">WARNING</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#ffb64d</span>,
+                                <span class="palete-color__code palete-color__darken__code">#ffa627</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--info">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">INFO</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#90d0d0</span>,
+                                <span class="palete-color__code palete-color__darken__code">#75c5c5</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--sky">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SKY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#29a9e0</span>,
+                                <span class="palete-color__code palete-color__darken__code">#1d93c6</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--inverse">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">INVERSE</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#444c67</span>,
+                                <span class="palete-color__code palete-color__darken__code">#353b50</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--dark">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">DARK</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#19282b</span>,
+                                <span class="palete-color__code palete-color__darken__code">#0b1213</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--grey">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#535e60</span>,
+                                <span class="palete-color__code palete-color__darken__code">#414a4b</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--darkgrey">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">DARKGREY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#a9aeaf</span>,
+                                <span class="palete-color__code palete-color__darken__code">#959b9d</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--lightgrey">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">LIGHTGREY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#c6c9ca</span>,
+                                <span class="palete-color__code palete-color__darken__code">#b2b6b8</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--muted">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">MUTED</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#a6a9b7</span>,
+                                <span class="palete-color__code palete-color__darken__code">#9195a6</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--water">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">WATER</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#cacfd6</span>,
+                                <span class="palete-color__code palete-color__darken__code">#b4bbc5</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--light">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">LIGHT</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#ebebeb</span>,
+                                <span class="palete-color__code palete-color__darken__code">#d8d8d8</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--black">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">BLACK</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#2c3031</span>,
+                                <span class="palete-color__code palete-color__darken__code">#1a1c1d</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gui-cnt-row">
+                    <h4 class="gui-sub-heading-ver1">
+                        <font>Neutrals</font>
+                        <big>Neutrals Palette</big>
+                    </h4>
+                    <ul class="list-palete">
+                        <li class="palete-card ">
+                            <div class="palete-color palete-color--white">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">WHITE</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#ffffff</span>,
+                                <span class="palete-color__code palete-color__darken__code">#ececec</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--100">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-100</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#fafbfb</span>,
+                                <span class="palete-color__code palete-color__darken__code">#e5eaea</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--200">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-200</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#edeeef</span>,
+                                <span class="palete-color__code palete-color__darken__code">#d9dbdd</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--300">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-300</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#dfe2e3</span>,
+                                <span class="palete-color__code palete-color__darken__code">#cbd0d1</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--400">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-400</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#c5c9ca</span>,
+                                <span class="palete-color__code palete-color__darken__code">#b1b6b8</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--500">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-500</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#aab1b2</span>,
+                                <span class="palete-color__code palete-color__darken__code">#969fa0</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--600">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-600</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#8f989a</span>,
+                                <span class="palete-color__code palete-color__darken__code">#7b8688</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--700">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-700</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#747f82</span>,
+                                <span class="palete-color__code palete-color__darken__code">#626b6e</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--800">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-800</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#5c6567</span>,
+                                <span class="palete-color__code palete-color__darken__code">#4a5153</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--900">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-900</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#444a4c</span>,
+                                <span class="palete-color__code palete-color__darken__code">#323638</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--black">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">GREY-BLACK</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#2c3031</span>,
+                                <span class="palete-color__code palete-color__darken__code">#1a1c1d</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gui-cnt-row">
+                    <h4 class="gui-sub-heading-ver1">
+                        <font>Background</font>
+                        <big>Background Palette</big>
+                    </h4>
+                    <ul class="list-palete">
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--default">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">default</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f1f4f9</span>,
+                                <span class="palete-color__code palete-color__darken__code">#d6dfee</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--snow">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SNOW</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#fafafa</span>,
+                                <span class="palete-color__code palete-color__darken__code">#e7e7e7</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--smoke">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SMOKE</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f3f3f4</span>,
+                                <span class="palete-color__code palete-color__darken__code">#dfdfe2</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--azure">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">azuRe</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f2f4f4</span>,
+                                <span class="palete-color__code palete-color__darken__code">#dde2e2</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--azure_l">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">AZURE_L</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f6f7f7</span>,
+                                <span class="palete-color__code palete-color__darken__code">#e2e5e5</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--bluegrey">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">BLUEGREY</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f5f6fa</span>,
+                                <span class="palete-color__code palete-color__darken__code">#dcdfed</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--solitude">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">SOLITUDE</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#f4f5f7</span>,
+                                <span class="palete-color__code palete-color__darken__code">#dee1e7</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gui-cnt-row">
+                    <h4 class="gui-sub-heading-ver1">
+                        <font>Brand</font>
+                        <big>Brand Palette</big>
+                    </h4>
+                    <ul class="list-palete">
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--facebook">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">facebook</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#3b5999</span>,
+                                <span class="palete-color__code palete-color__darken__code">#30497d</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--twitter">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">twitter</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#1da1f2</span>,
+                                <span class="palete-color__code palete-color__darken__code">#0d8ddc</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--google-plus">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">google-plus</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#dd4b39</span>,
+                                <span class="palete-color__code palete-color__darken__code">#cd3623</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--instagram">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">instagram</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#e4405f</span>,
+                                <span class="palete-color__code palete-color__darken__code">#de1f44</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--pinterest">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">pinterest</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#bd081c</span>,
+                                <span class="palete-color__code palete-color__darken__code">#980617</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--youtube">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">youtube</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#cd201f</span>,
+                                <span class="palete-color__code palete-color__darken__code">#ac1b1a</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--slack">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">slack</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#3aaf85</span>,
+                                <span class="palete-color__code palete-color__darken__code">#30926f</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--reddit">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">reddit</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#e84422</span>,
+                                <span class="palete-color__code palete-color__darken__code">#ce3515</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--dribbble">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">dribbble</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#ea4c89</span>,
+                                <span class="palete-color__code palete-color__darken__code">#e62a72</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--github">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">github</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#222222</span>,
+                                <span class="palete-color__code palete-color__darken__code">#0f0f0f</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--dropbox">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">dropbox</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#1e90ff</span>,
+                                <span class="palete-color__code palete-color__darken__code">#007df7</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--twitch">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">twitch</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#4b367c</span>,
+                                <span class="palete-color__code palete-color__darken__code">#3b2a61</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--paypal">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">paypal</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#ecb32c</span>,
+                                <span class="palete-color__code palete-color__darken__code">#dea214</span>
+                            </div>
+                        </li>
+                        <li class="palete-card">
+                            <div class="palete-color palete-color--behance">
+                                <div class="palete-color__square palete-color__lighten"></div>
+                                <div class="palete-color__square palete-color__darken"></div>
+                            </div>
+                            <div class="palete-color__content">
+                                <h1 class="palete-color__name">behance</h1>
+                                <span class="palete-color__code palete-color__lighten__code">#0057ff</span>,
+                                <span class="palete-color__code palete-color__darken__code">#004ad9</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="gui-block scrollspy" id="typography">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="gui-icon-heading-ver1">
+                            <h3 class="gui-icon-heading-ver1-hd" data-heading="Typography">字體</h3>
+                            <div class="gui-icon-heading-ver1-bd">
+                                <i class="re-g-gd-design-catalog-brochure" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row">
+                    <div class="col-lg-6 col-sm-12">
+                        <h4 class="gui-sub-heading-ver1">
+                            <font>Chinese</font>
+                            <big>Chinese Fonts</big>
+                        </h4>
+                        <div class="ty-group control-card control-card--ver1 bg--white shd-lt">
+                            <div class="mask mask_square"></div>
+                            <div class="ty-group-head">
+                                <strong>H1</strong>
+                                <big>Noto Sans CJK TC</big>
+                                40<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2.5<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h1>思源黑體</h1>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>H2</strong>
+                                <big>Noto Sans CJK TC</big>
+                                36<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2.25<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h2>思源黑體</h2>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>H3</strong>
+                                <big>Noto Sans CJK TC</big>
+                                32<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h3>思源黑體</h3>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>H4</strong>
+                                <big>Noto Sans CJK TC</big>
+                                28<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.75<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h4>思源黑體</h4>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>H5</strong>
+                                <big>Noto Sans CJK TC</big>
+                                24<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.5<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h5>思源黑體</h5>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>h6</strong>
+                                <big>Noto Sans CJK TC</big>
+                                18<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.z25<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h6>思源黑體</h6>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>PARAGRAPH</strong>
+                                <big>Noto Sans CJK TC</big>
+                                16<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <p>水星表黨所解康地……立論運工我顯。其能成首，度型而、保沒別民高。林者未文同國候同列。元完清深財會太團者後極亞性的；向體下成太現意下告！成大子禮因小後人節！定及演和我買心當長故動壓口車畫日。</p>
+                            </div>
+                            <div class="ty-group-head">
+                                <strong>SPAN</strong>
+                                <big>Noto Sans CJK TC</big>
+                                14<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                0.875<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <span>水星表黨所解康地……立論運工我顯。其能成首，度型而、保沒別民高。林者未文同國候同列。元完清深財會太團者後極亞性的；向體下成太現意下告！成大子禮因小後人節！定及演和我買心當長故動壓口車畫日。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <h4 class="gui-sub-heading-ver1">
+                            <font>English</font>
+                            <big>English Fonts</big>
+                        </h4>
+                        <div class="ty-group control-card control-card--ver1 bg--white shd-rt">
+                            <div class="mask mask_square"></div>
+                            <div class="ty-group-head">
+                                <strong>H1</strong>
+                                <big>Noto Sans TC</big>
+                                40<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2.5<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h1>Noto Sans TC</h1>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>H2</strong>
+                                <big>Noto Sans TC</big>
+                                36<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2.25<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h2>Noto Sans TC</h2>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>H3</strong>
+                                <big>Noto Sans TC</big>
+                                32<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                2<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h3>Noto Sans TC</h3>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>H4</strong>
+                                <big>Noto Sans TC</big>
+                                28<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.75<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h4>Noto Sans TC</h4>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>H5</strong>
+                                <big>Noto Sans TC</big>
+                                24<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.5<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h5>Noto Sans TC</h5>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>h6</strong>
+                                <big>Noto Sans TC</big>
+                                18<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1.125<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <h6>Noto Sans TC</h6>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>PARAGRAPH</strong>
+                                <big>Noto Sans TC</big>
+                                16<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                1<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eius aperiam, repellendus cum, accusantium minus? Praesentium tenetur, autem ipsa distinctio.</p>
+                            </div>
+
+                            <div class="ty-group-head">
+                                <strong>SPAN</strong>
+                                <big>Noto Sans TC</big>
+                                14<sub>PX</sub>
+                                <font class="text--lightgrey">|</font>
+                                0.875<sub>REM</sub>
+                            </div>
+                            <div class="ty-group-bd">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eius aperiam, repellendus cum, accusantium minus? Praesentium tenetur, autem ipsa distinctio.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <hr>
+        <section class="gui-block scrollspy" id="layout">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="gui-icon-heading-ver1">
+                            <h3 class="gui-icon-heading-ver1-hd" data-heading="LAYOUT">佈局</h3>
+                            <div class="gui-icon-heading-ver1-bd">
+                                <i class="re-g-applications-webpage-elements" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="gui-description mt-16">
+                            使用 Float 排版，以 PC 為主，格線系統參考 Bootstrap．
+                        </div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row">
+                    <div class="col-lg-12">
+                        <table class="table--ver3 font-w--400 shd--ver_12">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        <h6 class="mb-4">LARGE</h6>
+                                        <p class="font-w--300">
+                                            <font class="text--danger mr-8">>=</font>
+                                            <big>992</big> PX 以上
+                                        </p>
+                                    </th>
+                                    <th>
+                                        <h6 class="mb-4">MEDIUM</h6>
+                                        <p class="font-w--300">
+                                            <font class="text--primary mr-8">=<</font> 小於 <big>992</big> PX
+                                        </p>
+                                        <font class="text--pink font-w--300">@media all and (max-width:992px)</font>
+                                    </th>
+                                    <th>
+                                        <h6 class="mb-4">Small</h6>
+                                        <p class="font-w--300">
+                                            <font class="text--primary mr-8">=<</font> 小於 <big>768</big> PX
+                                        </p>
+                                        <font class="text--pink font-w--300">@media all and (max-width:768px)</font>
+                                    </th>
+                                    <th>
+                                        <h6 class="mb-4">X-Small</h6>
+                                        <p class="font-w--300">
+                                            <font class="text--primary mr-8">=<</font> 小於 <big>480</big> PX
+                                        </p>
+                                        <font class="text--pink font-w--300">@media all and (max-width:480px)</font>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6 class="align-left">CLASS NAME</h6>
+                                    </td>
+                                    <td>col-lg-</td>
+                                    <td>col-md-</td>
+                                    <td>col-sm-</td>
+                                    <td>col-xs-</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6 class="align-left">COLUMNS</h6>
+                                    </td>
+                                    <td colspan="4" class="align-center">12</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6 class="align-left">GUTTER WIDTH</h6>
+                                    </td>
+                                    <td colspan="4" class="align-center align-middle">8PX<font class="text--lightgrey mr-8 ml-8">|</font>0.5REM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-1">
+                        <div class="col-style">col-lg-1</div>
+                    </div>
+                    <div class="col-lg-11">
+                        <div class="col-style">col-lg-11</div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-2">
+                        <div class="col-style">col-lg-2</div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="col-style">col-lg-10</div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-3">
+                        <div class="col-style">col-lg-3</div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="col-style">col-lg-9</div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-4">
+                        <div class="col-style">col-lg-4</div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="col-style">col-lg-8</div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-5">
+                        <div class="col-style">col-lg-5</div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="col-style">col-lg-7</div>
+                    </div>
+                </div>
+                <div class="row gui-cnt-row mb-32">
+                    <div class="col-lg-6">
+                        <div class="col-style">col-lg-6</div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-style">col-lg-6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button class="rt-fix-tools go-to-top js-go-to" data-type="fixed" data-position='{"bottom": 72,"right": 24}' data-offset-top="400" data-compensation="#header" data-show-effect="zoomIn">
+        <i class="re-g-de-au-linear-big"></i>
+        <font>回頂端</font>
+    </button>
+    <!-- JQuery -->
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chosen Select -->
+    <script type="text/javascript" src="vendor/chosen/chosen.jquery.min.js"></script>
+    <!-- Gsap -->
+    <!-- <script type="text/javascript" src="vendor/gsap/dist/gsap.min.js"></script> -->
+    <!-- 404 -->
+    <!-- <script type="text/javascript" src="js/404/404.js"></script> -->
+    <!-- mCustomScrollbar -->
+    <script type="text/javascript" src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Loader -->
+    <script type="text/javascript" src="js/components/pace.js"></script>
+    <!-- Scrollspy -->
+    <script type="text/javascript" src="vendor/simple-scrollspy/dist/simple-scrollspy.min.js"></script>
+    <!-- GoTop -->
+    <script type="text/javascript" src="js/components/BcGotop.js"></script>
+    <!-- Main -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+
+    window.onload = function() {
+        scrollSpy('#guideMenu', {
+            sectionClass: '.scrollspy',
+            menuActiveTarget: '#guideMenu li a',
+            offset: 200
+        });
+
+        $('#guiAside').mCustomScrollbar({
+            axis: "y"
+        });
+    }
+    // // Color Rgb to Hex
+    // function rgb2hex(rgb) {
+
+    //     rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+    //     function hex(x) {
+    //         return ("0" + parseInt(x).toString(16)).slice(-2);
+    //     }
+    //     return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+    // }
+
+    // // Color Palete bulid
+    // $("ul.list-palete > li").each(function() {
+    //     var _this = $(this);
+
+    //     var lighten = _this.find('div.palete-color').find('div.palete-color__lighten').css('backgroundColor');
+    //     var lightenHex = rgb2hex(lighten);
+    //     var darken = _this.find('div.palete-color').find('div.palete-color__darken').css('backgroundColor');
+    //     var darkenHex = rgb2hex(darken);
+
+    //     _this.find('div.palete-color__content').find('span.palete-color__lighten__code').html(lightenHex);
+    //     _this.find('div.palete-color__content').find('span.palete-color__darken__code').html(darkenHex);
+    // });
+
+    // iCon Build 
+    // $.ajax({
+    //     url: "https://i.icomoon.io/public/0ed9c0c39b/BedCar/selection.json",
+    //     dataType: "json",
+    //     success: function(data) {
+    //         var icons = data.icons;
+    //         //console.log(icons);
+
+    //         $.each(icons, function(key, icon) {
+
+    //             $('[data-toggle="tooltip"]').tooltip();
+
+    //             //console.log(icon)
+    //             if (icon.setId == 3) {
+    //                 $('#SocialMedia').append(
+    //                     "<li class='gui-icon-blk'>\
+    //                         <div class='gui-icon-cnt'>\
+    //                             <a class='link--grey' href='javascript:;' data-toggle=tooltip title=re-g-" + icon.properties.name + ">\
+    //                                 <i class='re-g-" + icon.properties.name + "'></i>\
+    //                             </a>\
+    //                             <p>re-g-" + icon.properties.name + "</p>\
+    //                         </div>\
+    //                     </li>")
+    //             } else if (icon.setId == 2) {
+    //                 $('#Primary').append(
+    //                     "<li class='gui-icon-blk'>\
+    //                         <div class='gui-icon-cnt'>\
+    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
+    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
+    //                                 </a>\
+    //                             <p>re-g-" + icon.properties.name + "</p>\
+    //                         </div>\
+    //                     </li>")
+    //             } else if (icon.setId == 1) {
+    //                 $('#Default').append(
+    //                     "<li class='gui-icon-blk'>\
+    //                         <div class='gui-icon-cnt'>\
+    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
+    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
+    //                                 </a>\
+    //                             <p>re-g-" + icon.properties.name + "</p>\
+    //                         </div>\
+    //                     </li>")
+    //             } else if (icon.setId == 0) {
+    //                 $('#Lineicon').append(
+    //                     "<li class='gui-icon-blk'>\
+    //                         <div class='gui-icon-cnt'>\
+    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
+    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
+    //                                 </a>\
+    //                             <p>re-g-" + icon.properties.name + "</p>\
+    //                         </div>\
+    //                     </li>")
+    //             }
+    //         })
+
+    //     },
+    //     error: function(jqXHR, textStatus, errorThrown) {
+    //         console.log('ERROR', textStatus, errorThrown);
+    //     }
+    // });
+    </script>
+</body>
+
+</html>

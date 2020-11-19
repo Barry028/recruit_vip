@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > Alerts
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.alert--block {
+    border: $alert-border-width solid transparent;
+    font-size: $font-size-xs;
+    padding: $alert-padding-y $alert-padding-x;
+
+    @include border-radius($alert-border-radius);
+
+    i {
+        vertical-align: middle;
+    }
+
+    font {
+        vertical-align: middle;
+    }
+
+    .close {
+        @include absolute($R: 0.375rem, $T: 0.375rem);
+
+        color: $dark;
+        cursor: pointer;
+        font-size: 1.125rem;
+
+        &:hover {
+            color: rgba($dark, 0.7);
+        }
+    }
+}
+
+// Alternate styles
+@each $color, $value in $btn-colors {
+    .alert--#{$color} {
+        @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+    }
+}

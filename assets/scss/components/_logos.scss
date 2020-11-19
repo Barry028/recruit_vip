@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+.logo--lg {
+    &.logo--lg {
+        span {
+            font-size: 3rem;
+        }
+    }
+}
+
+.logo--md {
+    &.logo--md {
+        span {
+            font-size: 2rem;
+        }
+    }
+}
+
+.logo--sm {
+    &.logo--sm {
+        span {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.logo--xs {
+    &.logo--xs {
+        span {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.nre-recruit-dk span:nth-child(1):before {
+    content: "\ecfa";
+    color: $dark;
+}
+
+.nre-recruit-dk span:nth-child(2):before {
+    content: "\ecfb";
+    margin-left: -3.75390625em;
+    color: rgb(255, 255, 255);
+}
+
+.nre-recruit-dk span:nth-child(3):before {
+    content: "\ecfc";
+    margin-left: -3.75390625em;
+    color: rgb(233, 41, 33);
+}
+
+.nre-recruit-s-dk span:nth-child(1):before {
+    content: "\ecfd";
+    opacity: 0.4;
+    color: $dark;
+}
+
+.nre-recruit-s-dk span:nth-child(2):before {
+    content: "\ecfe";
+    margin-left: -4.021484375em;
+    color: $dark;
+}
+
+.nre-recruit-s-dk span:nth-child(3):before {
+    content: "\ecff";
+    margin-left: -4.021484375em;
+    color: $dark;
+}
+
+.nre-recruit-s-wt span:nth-child(1):before {
+    content: "\ed00";
+    color: rgb(255, 255, 255);
+    opacity: 0.4;
+}
+
+.nre-recruit-s-wt span:nth-child(2):before {
+    content: "\ed01";
+    margin-left: -4.021484375em;
+    color: rgb(255, 255, 255);
+}
+
+.nre-recruit-s-wt span:nth-child(3):before {
+    content: "\ed02";
+    margin-left: -4.021484375em;
+    color: rgb(255, 255, 255);
+}
+
+.nre-recruit-wt span:nth-child(1):before {
+    content: "\ed03";
+    color: rgb(255, 255, 255);
+}
+
+.nre-recruit-wt span:nth-child(2):before {
+    content: "\ed04";
+    margin-left: -3.75390625em;
+    color: rgb(255, 255, 255);
+}
+
+.nre-recruit-wt span:nth-child(3):before {
+    content: "\ed05";
+    margin-left: -3.75390625em;
+    color: rgb(233, 41, 33);
+}

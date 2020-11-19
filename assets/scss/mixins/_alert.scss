@@ -1,0 +1,25 @@
+@charset "utf-8";
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Mixins > Alert
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin alert-variant($background, $border, $color) {
+  color: $color;
+
+  @include gradient-bg($background);
+
+  border-color: $border;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  a {
+    color: $color;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($color, 10%);
+    }
+  }
+
+}

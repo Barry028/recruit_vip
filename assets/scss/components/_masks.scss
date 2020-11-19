@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > Mask
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // z-index: 1;
+
+    @for $i from 1 through 25 {
+        &.mask_white--#{$i * 4} {
+            background-color: rgba($white, $i * 0.04) !important;
+        }
+    }
+
+    @for $i from 1 through 25 {
+        &.mask_dark--#{$i * 4} {
+            background-color: rgba($black, $i * 0.04) !important;
+        }
+    }
+
+    @for $i from 1 through 25 {
+        &.mask_primary--#{$i * 4} {
+            background-color: rgba(#bcedf3, $i * 0.04) !important;
+        }
+    }
+
+    &.mask_square {
+        background: {
+            image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj4KICA8ZyBpZD0iR3JvdXBfODI4MjQiIGRhdGEtbmFtZT0iR3JvdXAgODI4MjQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMjEgLTE1OCkiPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNDExNiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQxMTYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyMiAxNTkpIiBmaWxsPSIjOWI5YjliIi8+CiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzI0MTE3IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyNDExNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIxIDE1OCkiIGZpbGw9IiM5YjliOWIiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMjQxMjYiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDI0MTI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjIgMTU4KSIgZmlsbD0iI2ZiZmJmYiIvPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNDEyNyIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQxMjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM3MCAxNTgpIiBmaWxsPSIjZmJmYmZiIi8+CiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzI0MTI1IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyNDEyNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIxIDE1OSkiIGZpbGw9IiNmZmYiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMjQxMjgiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDI0MTI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjEgMjA3KSIgZmlsbD0iI2ZmZiIvPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNDExOSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQxMTkiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyMiAyMDcpIiBmaWxsPSIjOWI5YjliIi8+CiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzI0MTIxIiBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyNDEyMSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzcwIDIwNykiIGZpbGw9IiM5YjliOWIiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMjQxMjMiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDI0MTIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNzAgMTU5KSIgZmlsbD0iIzliOWI5YiIvPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNDExOCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQxMTgiIHdpZHRoPSIxIiBoZWlnaHQ9IjQ3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjEgMTYwKSIgZmlsbD0iI2U5ZTllOCIvPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNDEyMiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQxMjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjQ3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNzAgMTU4KSByb3RhdGUoOTApIiBmaWxsPSIjZTllOWU4Ii8+CiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzI0MTI0IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyNDEyNCIgd2lkdGg9IjEiIGhlaWdodD0iNDciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM3MCAyMDcpIHJvdGF0ZSg5MCkiIGZpbGw9IiNmZmYiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMjQxMjAiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDI0MTIwIiB3aWR0aD0iMSIgaGVpZ2h0PSI0NyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzcwIDE2MCkiIGZpbGw9IiNlOWU5ZTgiLz4KICA8L2c+Cjwvc3ZnPgo=");
+            size: 2rem 2rem;
+            repeat: repeat;
+            position-x: 0;
+            position-y: 0;
+        };
+
+        @include opacity(0.72);
+    }
+
+    &.mask_wave {
+        background:
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAP0lEQVQoU42Q0QoAIAgDz///aMPAKKeQb26HTg0tB6zKVUhI4Bus5tMn2K4Djh7gBGXM7Uvo5riQ/BfUNwwTWfn+Cgg4zkoRAAAAAElFTkSuQmCC)
+        repeat;
+
+        @include opacity(0.16);
+    }
+
+    &.mask_slash {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQoU2NkIAIwEqHmPyFF/xkYGBgJKQJbhEsR2ASYU7ApQlGAzyQU/yCbhGECunU4FYAUAgBp4wYJ31jKswAAAABJRU5ErkJggg==) repeat;
+
+        @include opacity(0.16);
+    }
+}

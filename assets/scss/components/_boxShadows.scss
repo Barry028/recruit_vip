@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > BoxShadows
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.shd-none {
+    @include shd-none;
+}
+
+.shd-betw {
+    &:after {
+        @include shd-paper-lt;
+    }
+
+    &:before {
+        @include shd-paper-rt;
+    }
+}
+
+.shd-lt {
+    &:before {
+        @include shd-paper-lt;
+    }
+}
+
+.shd-rt {
+    &:after {
+        @include shd-paper-rt;
+    }
+}
+
+.shd--ver_1 {
+    @include shd--ver_1;
+}
+
+.shd--ver_2 {
+    @include shd--ver_2;
+}
+
+.shd--ver_3 {
+    @include shd--ver_3;
+}
+
+.shd--ver_4 {
+    @include shd--ver_4;
+}
+
+.shd--ver_5 {
+    @include shd--ver_5;
+}
+
+.shd--ver_6 {
+    @include shd--ver_6;
+}
+
+.shd--ver_7 {
+    @include shd--ver_7;
+}
+
+.shd--ver_8 {
+    @include shd--ver_8;
+}
+
+.shd--ver_9 {
+    @include shd--ver_9;
+}
+
+.shd--ver_10 {
+    @include shd--ver_10;
+}
+
+.shd--ver_11 {
+    @include shd--ver_11;
+}
+
+.shd--ver_12 {
+    @include shd--ver_12;
+}
+
+.shd--ver_13 {
+    @include shd--ver_13;
+}
+
+.shd--ver_14 {
+    @include shd--ver_14;
+}
+
+.shd--ver_15 {
+    @include shd--ver_15;
+}
+
+.shd--ver_16 {
+    @include shd--ver_16;
+}
+
+.shd--ver_17 {
+    @include shd--ver_17;
+}
+
+.shd--ver_18 {
+    @include shd--ver_18;
+}
+
+.shd--hv--ver_1 {
+    @include shd--hv--ver_1;
+}
+
+.shd--hv--ver_2 {
+    @include shd--hv--ver_2;
+}
+
+.shd--hv--ver_3 {
+    @include shd--hv--ver_3;
+}
+
+.shd--hv--ver_4 {
+    @include shd--hv--ver_4;
+}
+
+.shd--hv--ver_5 {
+    @include shd--hv--ver_5;
+}

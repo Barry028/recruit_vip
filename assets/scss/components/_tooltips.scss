@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Mixins > Tooltip
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+    line-break: auto;
+    font-size: 0.875rem;
+    word-wrap: break-word;
+    opacity: 0;
+
+    &.show {
+        opacity: 0.9;
+    }
+
+    .arrow {
+        position: absolute;
+        display: block;
+        width: 0.8rem;
+        height: 0.4rem;
+
+        &::before {
+            position: absolute;
+            content: "";
+            border-color: transparent;
+            border-style: solid;
+        }
+    }
+
+
+
+}
+
+.bs-tooltip-top {
+    padding: 0.4rem 0;
+
+    .arrow {
+        bottom: 0;
+
+        &::before {
+            top: 0;
+            border-width: 0.4rem 0.4rem 0;
+            border-top-color: $black;
+        }
+    }
+}
+
+.bs-tooltip-right {
+    padding: 0 0.4rem;
+
+    .arrow {
+        left: 0;
+        width: 0.4rem;
+        height: 0.8rem;
+
+        &::before {
+            right: 0;
+            border-width: 0.4rem 0.4rem 0.4rem 0;
+            border-right-color: $black;
+        }
+    }
+}
+
+.bs-tooltip-bottom {
+    padding: 0.4rem 0;
+
+    .arrow {
+        top: 0;
+
+        &::before {
+            bottom: 0;
+            border-width: 0 0.4rem 0.4rem;
+            border-bottom-color: $black;
+        }
+    }
+}
+
+.bs-tooltip-left {
+  padding: 0 0.4rem;
+
+    .arrow {
+      right: 0;
+      width: 0.4rem;
+      height: 0.8rem;
+
+        &::before {
+            right: 0;
+            border-width: 0.4rem 0  0.4rem 0.4rem ;
+            border-left-color: $black;
+        }
+    }
+}
+
+.bs-tooltip-auto {
+    &[x-placement^="top"] {
+        @extend .bs-tooltip-top;
+    }
+
+    &[x-placement^="right"] {
+        @extend .bs-tooltip-right;
+    }
+
+    &[x-placement^="bottom"] {
+        @extend .bs-tooltip-bottom;
+    }
+
+    &[x-placement^="left"] {
+        @extend .bs-tooltip-left;
+    }
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 4px 8px;
+    color: $white;
+    text-align: center;
+    background-color: $black;
+    border-radius: 4px;
+}

@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Layout > Forms
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin placeholder-theme($styles) {
+    @each $pseudo in $pseudo-phprefix {
+        @at-root #{&}#{$pseudo} {
+            @each $key, $value in $styles {
+                #{$key}: #{$value};
+            }
+        }
+    }
+}
+
+@mixin placeholder {
+    @each $pseudo in $pseudo-phprefix {
+        @at-root #{&}#{$pseudo} {
+            @content;
+        }
+    }
+}
+
+@mixin fieldset {
+    fieldset[disabled] & {
+        @content;
+    }
+}
+
+@include placeholder {
+    color: $lightgrey;
+}
+
+
+#{$text-inputs-list} {
+    background-color: $smoke;
+    border: 1px transparent solid;
+
+    @include border-radius(2px);
+
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+    font-size: .9375rem;
+    padding: .625rem .875rem;
+    transition: $transition-input;
+
+    &:focus {
+        border-color: $primary;
+
+        // box-shadow: 0 0 8px 0 $primary;
+   
+    }
+
+    @include ie {
+        line-height: 1;
+        padding: .75rem .875rem;
+    }
+}
+
+.form {
+    &-group {
+        margin-bottom: 1.25rem;
+    }
+
+    &-check {
+        margin-bottom: 1.25rem;
+    }
+
+    &-col {
+        @include in-bk-mid;
+    }
+
+    &-control.form-control {
+        display: block;
+        width: 100%;
+
+        &--md {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9375rem;
+            line-height: 1.75;
+        }
+
+        &.is-valid {
+            padding-right: 2.75rem;
+            border-color: $success;
+        }
+
+        &.is-invalid {
+            padding-right: 2.75rem;
+            border-color: $danger;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+        }
+
+        &[disabled],
+        &[readonly] {
+            background-color: $bluegrey;
+            opacity: 1;
+        }
+    }
+}
+
+.checkbox-van-inp {
+    display: none;
+
+    ~ .checkbox-van-lab {
+        cursor: pointer;
+        user-select: none;
+        font-size: .875rem;
+
+        .checkbox, a, font {
+            @include in-bk-mid;
+        }
+
+        &.checkbox--lg .checkbox {
+            height: 22px;
+            width: 22px;
+
+            &:after {
+                width: 8px;
+                height: 12px;
+            }
+        }
+
+        &.checkbox--md .checkbox {
+            height: 20px;
+            width: 20px;
+
+            &:after {
+                width: 7px;
+                height: 11px;
+            }
+        }
+
+        .checkbox {
+            height: 18px;
+            width: 18px;
+            background-color: $white;
+            border: 1px solid $grey-200;
+            border-radius: 2px;
+            transition: all 0.125s ease-in-out;
+            margin-right: .5rem;
+
+            &:before {
+                content: '';
+                height: 100%;
+                width: 100%;
+                background-color: desaturate($primary, 20%);
+                border-radius: 12%;
+                display: block;
+                opacity: 0.08;
+                transform: scale(0);
+                transition: all 0.125s ease-in-outt;
+            }
+
+            &:after {
+                content: '';
+                opacity: 0;
+                width: 6px;
+                height: 9px;
+                border: solid $white;
+                border-width: 0 2px 2px 0;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                transition: all 0.125s ease-in-out;
+            }
+
+            &:hover:before {
+                transform: scale(1.75);
+            }
+        }
+
+        &:hover .box {
+            border-color: desaturate($primary, 20%);
+        }
+    }
+
+    &:checked + .checkbox-van-lab .checkbox {
+        background: desaturate($primary, 20%);
+        border-color: desaturate($primary, 20%);
+
+        &:before {
+            opacity: 0;
+            transform: scale(2.5);
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:disabled + .checkbox-van-lab {
+        .checkbox {
+            border-color: $grey-200;
+            background: $grey-100;
+            cursor: not-allowed;
+        }
+
+        font, a {
+            cursor: not-allowed;
+        }
+
+        .checkbox:hover:before {
+            display: none;
+        }
+    }
+}
+
+.radio-van-inp {
+    display: none;
+
+    ~ .radio-van-lab {
+        cursor: pointer;
+        user-select: none;
+        font-size: .875rem;
+
+        .radio,
+        a,
+        font {
+            @include in-bk-mid;
+        }
+
+        &.radio--lg .radio {
+            width: 24px;
+            height: 24px;
+
+            &:after {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        &.radio--md .radio {
+            width: 22px;
+            height: 22px;
+
+            &:after {
+                width: 9px;
+                height: 9px;
+            }
+        }
+
+        .radio {
+            background-color: $white;
+            border: 1px solid $grey-200;
+            border-radius: 100%;
+            margin-right: .25rem;
+            width: 18px;
+            height: 18px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 8px;
+                height: 8px;
+                background-color: desaturate($primary, 20%);
+                border-radius: 100%;
+                opacity: 0.08;
+                pointer-events: none;
+                transform: translate(-50%, -50%) scale(0);
+                transition: all 0.125s ease-in-out;
+            }
+        }
+
+        &:hover .radio:after {
+            transform: translate(-50%, -50%) scale(3.5);
+        }
+    }
+
+    &:checked + .radio-van-lab .radio {
+        border-color: desaturate($primary, 20%);
+
+        &:after {
+            transform: scale(1) translate(-50%, -50%);
+            transition: all .25s ease-in-out;
+            opacity: 1;
+        }
+    }
+
+    &:disabled + .radio-van-lab {
+        .radio {
+            border-color: $grey-200;
+            background: $grey-100;
+            cursor: not-allowed;
+        }
+
+        font {
+            cursor: not-allowed;
+        }
+
+        .radio:after {
+            display: none;
+        }
+    }
+}
+
+.complate-list {
+    margin-bottom: .5rem;
+}

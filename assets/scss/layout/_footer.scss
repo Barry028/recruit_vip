@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Layout > Footer
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.footer {
+    background-color: $dark;
+    color: $white;
+    padding: 2.25rem 0;
+
+    .footer-title {
+        letter-spacing: 2px;
+    }
+
+    .footer-list {
+        li {
+            margin-left: .25rem;
+            margin-top: 1rem;
+        }
+
+        a {
+            letter-spacing: 1px;
+            color: $white;
+            font-size: .875rem;
+
+            &:hover {
+                color: $default;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.bt-footer {
+    background-color: darken($dark, 10%);
+    
+    padding: .875rem 0;
+
+    .copyright {
+    	color: $white;
+        text-align: center;
+    }
+
+    .browser {
+
+    	color: $light;
+        @include absolute($T: 50%, $R: 2rem);
+
+        transform: translateY(-50%);
+    }
+}

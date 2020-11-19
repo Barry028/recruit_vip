@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Components > Buttons
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.btn {
+    background-color: $grey-100;
+    border: 1px solid $grey-100;
+    color: $grey-800;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    white-space: nowrap;
+
+    @include in-bk-mid;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $border-radius--px);
+    @include transition($btn-transition);
+
+    @include hover {
+        color: $grey-600;
+        text-decoration: none;
+    }
+
+
+    &:not(:disabled):not(.disabled):not(.btn--disabled):focus,
+    &:not(:disabled):not(.disabled):not(.btn--disabled).focus {
+        outline: 0;
+        box-shadow: 0 0 0 1px rgba(mix(color-yiq($grey-100), $grey-100, 15%), 0.5);
+    }
+
+    &.btn--disabled,
+    &.disabled,
+    &:disabled {
+        cursor: not-allowed;
+        opacity: $btn-disabled-opacity;
+
+        @include box-shadow(none);
+    }
+
+    &:not(:disabled):not(.disabled):not(.btn--disabled):active,
+    &:not(:disabled):not(.disabled):not(.btn--disabled).active {
+        @include box-shadow($btn-active-box-shadow);
+
+        // &:focus:not(:disabled):not(.disabled):not(.btn--disabled) {
+        //   @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+   
+    }
+
+    // Button Sizes
+    &.btn--lg {
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $border-radius--px);
+    }
+
+    &.btn--md {
+        @include button-size($btn-padding-y-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md, $border-radius--px);
+    }
+
+    &.btn--sm {
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $border-radius--px);
+    }
+
+    &.btn--xs {
+        @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-line-height-xs, $border-radius--px);
+    }
+
+    &.btn--xxs {
+        @include button-size($btn-padding-y-xxs, $btn-padding-x-xxs, $btn-font-size-xxs, $btn-line-height-xxs, $border-radius--px);
+    }
+
+    // Block Button
+    &.btn--block {
+        display: block;
+        width: 100%;
+
+        + .btn.btn-block {
+            margin-top: $btn-block-spacing-y;
+        }
+    }
+    
+    &.btn--icon {
+        span {
+            vertical-align: middle;
+
+        }
+
+        i {
+            vertical-align: middle;
+            font-size: 125%;
+            margin-right: .75rem;
+        }
+    }
+
+// Square Buttons
+    &.btn--square {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+
+        i {
+            font-size: 1rem;
+
+            @include position-ab-center;
+        }
+
+        &--md {
+            width: 2.25rem;
+            height: 2.25rem;
+            padding: 0;
+
+            i {
+                font-size: 1.25rem;
+
+                @include position-ab-center;
+            }
+        }
+
+        &--lg {
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+
+            i {
+                font-size: 1.375rem;
+
+                @include position-ab-center;
+            }
+        }
+    }
+
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none;
+}
+
+.show > .btn.btn--border.dropdown-toggle {
+    color: $black;
+    background-color: lighten($black, 80%);
+    border-color: lighten($black, 75%);
+}
+
+// Buttons Colors
+@each $color, $value in $btn-colors {
+    .btn.btn--#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+
+// Buttons Colors
+@each $color, $value in $btn-colors {
+    .btn.btn--shadow--#{$color} {
+        @include  button-boxShadow-variant($value, $value);
+    }
+}
+// Buttons Border Each
+@each $color, $value in $btn-colors {
+    .btn.btn--border--#{$color} {
+        @include button-outline-variant($value);
+    }
+}
+
+// Buttons inverse Each
+@each $color, $value in $btn-colors {
+    .btn.btn--inverse--#{$color} {
+        @include button-inverse-variant($value);
+    }
+}
+
+// Buttons 3D Each
+@each $color, $value in $btn-colors {
+    .btn.btn--3d--#{$color} {
+        @include button-3d-variant($value);
+    }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn--block {
+        width: 100%;
+    }
+}
