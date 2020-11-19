@@ -15,11 +15,6 @@ const cssnano = require('cssnano');
 
 // 圖片壓縮
 const gulpImagemin = require('gulp-imagemin');
-
-// const del = require('del');
-// const runSequence = require('run-sequence');
-// const ghPages = require('gulp-gh-pages');
-
 // const browserSync = require("browser-sync").create();
 
 gulp.task('img', () => {
@@ -42,7 +37,7 @@ gulp.task('sass', () => {
         .pipe(sass({
                 outputStyle: 'expanded'
             }).on('error', sass.logError))
-            .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.', {
             sourceRoot: '../scss/'
             // 寫入Sourcemaps 到當前資料夾(以下下列 dest('assets/css')為基準點，
