@@ -5,10 +5,11 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hljs.code {
     font-size: .75rem;
-    max-height: 10rem;
-    padding: .75rem 1.5rem;
     font-family: $font-family-monospace;
 
+    max-height: 10rem;
+    padding: .75rem 1.5rem;
+    
     span {
         font-size: .75rem;
     }
@@ -16,6 +17,7 @@
 
 .gui-side-bar {
     position: fixed;
+
     height: 100%;
     width: 16rem;
     background-color: darken($dark, 5%);
@@ -37,6 +39,7 @@
     }
 
     .gui-side-nav {
+
         .side-title {
             padding: 1rem 0 1rem 2rem;
         }
@@ -93,8 +96,8 @@
 }
 
 .gui-main-cnt {
-    overflow: hidden;
     float: left;
+    overflow: hidden;
     margin-left: 16rem;
     width: calc(100% - 16rem);
 
@@ -393,22 +396,23 @@
 /* Basic card */
 
 .control-card {
-    transition: .25s all ease-in-out;
+    
 
     &:not(.control-card--ver1):not(.control-card--ver2) {
-        border-bottom: solid 3px #eff3f5;
+        border-bottom: solid 3px $azure;
         border-radius: 8px;
-        background-color: #f7f7f7;
+        background-color: $smoke;
 
         &:hover {
             transform: translate3d(0, -0.625rem, 0);
             box-shadow: 0 0.5rem 1rem -0.5rem rgba($black, 0.24);
+            transition: .25s all ease-in-out;
         }
     }
 
     &.control-card--ver1 {
         padding: .75rem;
-        border: 1px solid #eff3f5;
+        border: 1px solid $azure;
         border-radius: 2px;
 
         .card-inner {
@@ -439,7 +443,7 @@
 
     &.control-card--ver2 {
         padding: 1.5rem .75rem .75rem;
-        border: 1px solid #eff3f5;
+        border: 1px solid $azure;
         background-color: $white;
         border-radius: 2px;
         box-shadow: 0 4px 8px rgba($black, 0.04);
@@ -594,14 +598,23 @@
         margin: 1rem 0;
     }
 
-    padding-right: 1.5rem;
 }
 
 .ty-group .ty-group-head {
+    display: inline-block;
     &:not(:first-child) {
         margin-top: .75rem;
     }
-
+&:before {
+    content: '';
+    background: rgba($tertiary, 0.24);
+    position: absolute;
+    left: 0.25rem;
+    bottom: 0.125rem;
+    width: calc(100% - 0.5rem);
+    height: .75rem;
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+}
     margin-bottom: .25rem;
 
     strong {
@@ -737,7 +750,9 @@
     transform: translateX(-100%);
     transition: 0.25s all ease-in-out;
 }
-
+.col-style {
+    
+}
 /*  icon set
 ----------------------------------------  */
 .gui-icon-blk {
@@ -770,9 +785,7 @@
             margin-top: 1rem;
             white-space: nowrap;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             overflow: -moz-hidden-unscrollable;
-            -ms-overflow-style: none;
 
             &::-webkit-scrollbar {
                 display: none;
