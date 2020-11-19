@@ -751,7 +751,12 @@
     transition: 0.25s all ease-in-out;
 }
 .col-style {
-    
+    background-color: $inverse;
+    border-radius: 2px;
+    color: $white;
+    font-size: .75rem;
+    text-transform: uppercase;
+    padding: .75rem .5rem;
 }
 /*  icon set
 ----------------------------------------  */

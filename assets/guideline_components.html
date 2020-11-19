@@ -37,42 +37,13 @@
                 Guideline 設計規範
             </div>
             <ul id="guideMenu">
-                <li>
-                    <a href="#about">
-                        <i class="re-g-gd-compass-guide" aria-hidden="true"></i>
-                        <font>設計規範　ABOUT</font>
-                    </a>
-                </li>
-                <li>
-                    <a href="#logo">
-                        <i class="re-g-df--ribbon-flag" aria-hidden="true"></i>
-                        <font>品　　牌　BRAND LOGOS</font>
-                    </a>
-                </li>
-                <li>
-                    <a href="#palette">
-                        <i class="re-g-gd-design-painter-palette" aria-hidden="true"></i>
-                        <font>色　　彩　COLOR PALETTE</font>
-                    </a>
-                </li>
-               <li>
-                    <a href="#typography">
-                        <i class="re-g-gd-design-catalog-brochure" aria-hidden="true"></i>
-                        <font>字　　體　TYPOGRAPHY</font>
-                    </a>
-                </li>
-                 <!-- <li>
-                    <a href="#layout">
-                        <i class="re-g-applications-webpage-elements" aria-hidden="true"></i>
-                        <font>佈　　局　LAYOUT</font>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="#animation">
                         <i class="re-g-gd-gesture-click-swipe" aria-hidden="true"></i>
                         <font>動　　畫　ANIMATION</font>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="#button">
                         <i class="re-g-gd-handcrafts-clothes-button" aria-hidden="true"></i>
@@ -5859,91 +5830,6 @@
             axis: "y"
         });
     }
-    // Color Rgb to Hex
-    function rgb2hex(rgb) {
-
-        rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-
-        function hex(x) {
-            return ("0" + parseInt(x).toString(16)).slice(-2);
-        }
-        return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-    }
-
-    // Color Palete bulid
-    $("ul.list-palete > li").each(function() {
-        var _this = $(this);
-
-        var lighten = _this.find('div.palete-color').find('div.palete-color__lighten').css('backgroundColor');
-        var lightenHex = rgb2hex(lighten);
-        var darken = _this.find('div.palete-color').find('div.palete-color__darken').css('backgroundColor');
-        var darkenHex = rgb2hex(darken);
-
-        _this.find('div.palete-color__content').find('span.palete-color__lighten__code').html(lightenHex);
-        _this.find('div.palete-color__content').find('span.palete-color__darken__code').html(darkenHex);
-    });
-
-    // iCon Build 
-    // $.ajax({
-    //     url: "https://i.icomoon.io/public/0ed9c0c39b/BedCar/selection.json",
-    //     dataType: "json",
-    //     success: function(data) {
-    //         var icons = data.icons;
-    //         //console.log(icons);
-
-    //         $.each(icons, function(key, icon) {
-
-    //             $('[data-toggle="tooltip"]').tooltip();
-
-    //             //console.log(icon)
-    //             if (icon.setId == 3) {
-    //                 $('#SocialMedia').append(
-    //                     "<li class='gui-icon-blk'>\
-    //                         <div class='gui-icon-cnt'>\
-    //                             <a class='link--grey' href='javascript:;' data-toggle=tooltip title=re-g-" + icon.properties.name + ">\
-    //                                 <i class='re-g-" + icon.properties.name + "'></i>\
-    //                             </a>\
-    //                             <p>re-g-" + icon.properties.name + "</p>\
-    //                         </div>\
-    //                     </li>")
-    //             } else if (icon.setId == 2) {
-    //                 $('#Primary').append(
-    //                     "<li class='gui-icon-blk'>\
-    //                         <div class='gui-icon-cnt'>\
-    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
-    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
-    //                                 </a>\
-    //                             <p>re-g-" + icon.properties.name + "</p>\
-    //                         </div>\
-    //                     </li>")
-    //             } else if (icon.setId == 1) {
-    //                 $('#Default').append(
-    //                     "<li class='gui-icon-blk'>\
-    //                         <div class='gui-icon-cnt'>\
-    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
-    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
-    //                                 </a>\
-    //                             <p>re-g-" + icon.properties.name + "</p>\
-    //                         </div>\
-    //                     </li>")
-    //             } else if (icon.setId == 0) {
-    //                 $('#Lineicon').append(
-    //                     "<li class='gui-icon-blk'>\
-    //                         <div class='gui-icon-cnt'>\
-    //                                 <a class='link--grey' href='javascript:;' data-toggle='tooltip' title='re-g-" + icon.properties.name + "'>\
-    //                                     <i class='re-g-" + icon.properties.name + "'></i>\
-    //                                 </a>\
-    //                             <p>re-g-" + icon.properties.name + "</p>\
-    //                         </div>\
-    //                     </li>")
-    //             }
-    //         })
-
-    //     },
-    //     error: function(jqXHR, textStatus, errorThrown) {
-    //         console.log('ERROR', textStatus, errorThrown);
-    //     }
-    // });
     </script>
 </body>
 
