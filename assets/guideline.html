@@ -902,7 +902,7 @@
                                 <h5>思源黑體</h5>
                             </div>
                             <div class="ty-group-head">
-                                <strong>h6</strong>
+                                <strong>H6</strong>
                                 <big>Noto Sans CJK TC</big>
                                 18<sub>PX</sub>
                                 <font class="text--lightgrey">|</font>
@@ -991,7 +991,7 @@
                                 <h5>Noto Sans TC</h5>
                             </div>
                             <div class="ty-group-head">
-                                <strong>h6</strong>
+                                <strong>H6</strong>
                                 <big>Noto Sans TC</big>
                                 18<sub>PX</sub>
                                 <font class="text--lightgrey">|</font>
@@ -1624,7 +1624,7 @@
                                         <span class="control"></span>
                                     </label>
                                 </li>
-                            </ui>
+                                </ui>
                         </div>
                         <pre><code class="hljs code xml">&lt;input class="chk-inp" id="default1" type="checkbox"&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;input class="chk-inp" id="default1" type="checkbox"&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box box--md" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box box--lg" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;label class="toggle-control" for="toggle1"&gt;<br>  &lt;input type="checkbox" id="toggle1"&gt;<br>  &lt;span class="control"&gt;&lt;/span&gt;<br>&lt;/label&gt;</code></pre>
                     </div>
@@ -11215,12 +11215,30 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script>
     hljs.initHighlightingOnLoad();
-    $("#guiMenu").click(function() {
-        var menu = $('.gui-side-bar')
-        $(this).toggleClass('active');
-        menu.toggleClass('close').next('#guiMain').toggleClass('active');;
-    });
-    window.onload = function() {
+    $(document).ready(function() {
+        function testAnim(x) {
+            $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this).removeClass();
+            });
+        };
+
+        $('.js--triggerAnimation').click(function(e) {
+            e.preventDefault();
+            var anim = $('.js--animations').val();
+            testAnim(anim);
+        });
+
+        $('.js--animations').change(function() {
+            var anim = $(this).val();
+            testAnim(anim);
+        });
+
+        $("#guiMenu").click(function() {
+            var menu = $('.gui-side-bar')
+            $(this).toggleClass('active');
+            menu.toggleClass('close').next('#guiMain').toggleClass('active');;
+        });
+
         scrollSpy('#guideMenu', {
             sectionClass: '.scrollspy',
             menuActiveTarget: '#guideMenu li a',
@@ -11230,7 +11248,9 @@
         $('#guiAside').mCustomScrollbar({
             axis: "y"
         });
-    }
+
+    });
+
     // iCon Build 
     // $.ajax({
     //     url: "vendor/icon-recruit/selection.json",
