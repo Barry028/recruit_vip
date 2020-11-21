@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="sel-arrow" transform="translate(-1482 -488)">
+    <rect id="Rectangle_23476" data-name="Rectangle 23476" width="20" height="20" transform="translate(1482 488)" fill="#fff" opacity="0"/>
+    <g id="arrow-bt" transform="translate(1487 493)">
+      <rect id="bg" width="10" height="10" transform="translate(10) rotate(90)" fill="#bdc3c7" opacity="0"/>
+      <path id="union" d="M4.949,9.879.384,5.531a.428.428,0,0,1-.053-.043l-.2-.193a.407.407,0,0,1,0-.591l.2-.193a.428.428,0,0,1,.053-.043L4.949.121a.449.449,0,0,1,.613,0l.2.192a.4.4,0,0,1,0,.583L1.456,5,5.764,9.1a.4.4,0,0,1,0,.583l-.2.193a.449.449,0,0,1-.612,0Z" transform="translate(0 8.263) rotate(-90)" fill="#bdc3c7"/>
+    </g>
+  </g>
+</svg>

@@ -77,17 +77,11 @@
         }
     }
     
-    &.btn--icon {
-        span {
-            vertical-align: middle;
 
-        }
-
-        i {
-            vertical-align: middle;
-            font-size: 125%;
+    i {
+            font-size: 150%;
             margin-right: .75rem;
-        }
+            vertical-align: text-bottom;
     }
 
 // Square Buttons

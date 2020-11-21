@@ -15,30 +15,32 @@
     text-align: center;
     padding: .5rem;
     background-color: $white;
-}
 
-.table--ver1 thead {
-    background-color: $default;
-    border-bottom: ($border-width * 2) $border-style-solid $grey-200;
-}
+    thead {
+        background-color: $bluegrey;
+        border-bottom: ($border-width * 2) $border-style-solid $grey-200;
+    }
 
-.table--ver1 th {
-    font-weight: $font-weight-bolder;
-    padding: .75rem .25rem .5rem;
-    font-size: $font-size-xs;
-}
+    th {
+        border: $white $border-width $border-style-dotted;
+        font-weight: $font-weight-bolder;
+        padding: .75rem .25rem .5rem;
+        font-size: $font-size-xs;
+    }
 
-.table--ver1 tr {
-    border-bottom: $border-width $border-style-dotted $grey-200;
-}
+    tr {
+        border-bottom: $border-width $border-style-dotted $grey-200;
+    }
 
-.table--ver1 td {
-    padding: 1rem .25rem .75rem;
-    font-size: $font-size-xs;
-}
+    td {
+        padding: 1rem .25rem .75rem;
+        font-size: $font-size-xs;
+        border-right: $border-width $border-style-dotted $grey-200;
+    }
 
-.table--ver1 a {
-    font-size: $font-size-sm;
+    a {
+        font-size: $font-size-sm;
+    }
 }
 
 .table--ver1-foot {

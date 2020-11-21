@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Layout > switch
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.toggle-control {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .control {
+            background-color: $secondary;
+
+            &:after {
+                left: 2rem;
+            }
+        }
+    }
+
+    .control {
+        display: inline-block;
+        height: 2rem;
+        width: 4rem;
+        border-radius: 2rem;
+        background-color: #a9a9a9;
+        transition: background-color .15s ease-in;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: .125rem;
+            top: .125rem;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 2rem;
+            background: $white;
+            transition: left .15s ease-in;
+        }
+    }
+}
