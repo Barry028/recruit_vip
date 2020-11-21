@@ -310,7 +310,7 @@ $link-hover-color:          	darken($link-color, 15%) 		!default;
 $link-hover-decoration:     	underline 						!default;
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        		1.5 							!default; // 20/14
+$line-height-base:        		1.625 							!default;
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:    		1.75  							!default;
 
@@ -362,14 +362,19 @@ $transition-input:         		all 0.125s ease-in-out 			!default;
 $transition-input-bt: 			all 0.25s linear				!default;
 $transition-3d-Button:          all 0.25s ease 					!default;
 $transition-check-mark:			all 0.3s cubic-bezier(0.12, 0.49, 0.17, 0.87)!default;
+
 //== Typography
 
-// $font-family-serif:      		'Merriweather', serif !default;
-$font-family-sans-serif:      	'Noto Serif TC', -apple-system, 'Helvetica Neue', Helvetica, Arial,
-								'Microsoft JhengHei', "微軟正黑體", 'PingFang SC', 'Noto Sans CJK TC', sans-serif !default;
-$font-family-monospace:       	'IBM Plex Mono', -apple-system, 'Helvetica Neue', Helvetica, Arial,
-								'Microsoft JhengHei', "微軟正黑體", 'PingFang SC', 'Noto Sans CJK TC', sans-serif !default;
-$font-family-base:            	'Noto Sans TC', -apple-system, 'Helvetica Neue', Helvetica, Arial,
+$font-family-sans-serif:      	'Noto Sans TC', -apple-system, 'Segoe UI' ,'Helvetica Neue', Helvetica, Arial,
+								'Microsoft JhengHei', "微軟正黑體", 'PingFang SC', 'Noto Sans CJK TC', sans-serif !default;;
+
+$font-family-serif:      		'Noto Serif TC', -apple-system, 'Segoe UI' , Roboto ,'Helvetica Neue', Helvetica, Arial,
+								'Microsoft JhengHei', "微軟正黑體", 'PingFang SC', 'Noto Sans CJK TC'!default;
+
+$font-family-monospace:       	'Cousine',  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+
+$font-family-base:            	'Noto Sans TC', -apple-system, 'Segoe UI' ,'Helvetica Neue', Helvetica, Arial,
 								'Microsoft JhengHei', "微軟正黑體", 'PingFang SC', 'Noto Sans CJK TC', sans-serif !default;
 
 $font-size-html-base:			16px 						!default;
@@ -648,9 +653,6 @@ $badge-border-radius:               $border-radius !default;
 $badge-transition:                  $btn-transition !default;
 $badge-focus-width:                 $input-btn-focus-width !default;
 
-
-
-
 //== Box shhadow
 $box-shadow:            0 0.5rem 1rem rgba($dark, 0.15) 						!default;
 $box-shadow-lg:         0 1rem 3rem rgba($dark, 0.175) 							!default;
@@ -704,7 +706,7 @@ $shd--hv--ver--05: 		0 3px 10px 0 rgba($dark, 0.1)							!default;
 $shd--hv--ver--05--hv:  0 30px 60px 0 rgba($dark, 0.1)							!default;
 
 //== Margin & Padding Default
-$default-num:     				1rem 								!default;
+$default-num:     				1rem 											!default;
 
 //==  Utilities
 $displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
@@ -755,7 +757,6 @@ $navbar-default-toggle-hover-bg:           $light !default;
 $navbar-default-toggle-icon-bar-bg:        $grey !default;
 $navbar-default-toggle-border-color:       $light !default;
 
-
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      lighten($lightgrey, 15%) !default;
@@ -782,10 +783,6 @@ $navbar-inverse-toggle-icon-bar-bg:         $white !default;
 $navbar-inverse-toggle-border-color:        $dark !default;
 
 
-//== Navs
-//
-//##
-
 //=== Shared nav styles
 $nav-link-padding:                          10px 15px !default;
 $nav-link-hover-bg:                         $lightgrey !default;
@@ -808,7 +805,6 @@ $nav-tabs-justified-active-link-border-color:     $body-bg !default;
 $nav-pills-border-radius:                   $border-radius-base !default;
 $nav-pills-active-link-hover-bg:            $component-active-bg !default;
 $nav-pills-active-link-hover-color:         $component-active-color !default;
-
 
 //** Default `.form-control` height
 $input-height-base:              calc(1.5rem + .75rem + 2px) !default;

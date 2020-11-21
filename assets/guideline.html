@@ -43,7 +43,7 @@
             </div>
             <ul id="guideMenu">
                 <li>
-                    <a href="#Guideline">
+                    <a href="#guideline">
                         <i class="re-g-gd-compass-guide" aria-hidden="true"></i>
                         <font>設計規範 ｜ GUIDELINE</font>
                     </a>
@@ -137,11 +137,15 @@
                 </h1>
                 <div class="gui-update">
                     <i class="re-g-df-workspace-support-calendar-date"></i>
-                    2020 / 11 / 20 更新
+                    <font id="day"></font>
+                    <script>
+                        var NowDate = new Date();
+                        document.getElementById("day").innerHTML = NowDate.toDateString();
+                    </script>
                 </div>
             </div>
         </header>
-        <section class="gui-about scrollspy" id="Guideline">
+        <section class="gui-about scrollspy" id="guideline">
             <div class="container-fluid">
                 <div class="row">
                     <div class="gui-icon-heading-ver1">
@@ -173,7 +177,7 @@
                     <div class="gui-icon-heading-ver1">
                         <h3 class="gui-icon-heading-ver1-hd" data-heading="BRAND LOGO">品牌</h3>
                         <div class="gui-icon-heading-ver1-bd">
-                            <i class="re-g-df-ones" aria-hidden="true"></i>
+                            <i class="re-g-df--ribbon-flag" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -191,10 +195,6 @@
                                 <img src="img/recruit-dk.svg" alt="1111 求才招募系統">
                             </div>
                         </div>
-                        <a class="code-accordions">
-                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
-                            <span class="in-bk-mid">Code</span>
-                        </a>
                         <pre><code class="hljs code xml">&lt;img src="img/recruit-dk.svg" alt="1111 求才招募系統"&gt;</code></pre>
                     </div>
                     <div class="col-lg-6 col-sm-12">
@@ -204,10 +204,6 @@
                                 <img src="img/recruit-wt.svg" alt="1111 求才招募系統">
                             </div>
                         </div>
-                        <a class="code-accordions">
-                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
-                            <span class="in-bk-mid">Code</span>
-                        </a>
                         <pre><code class="hljs code xml">&lt;img src="img/recruit-wt.svg" alt="1111 求才招募系統"&gt;</code></pre>
                     </div>
                 </div>
@@ -231,10 +227,6 @@
                                 </i>
                             </div>
                         </div>
-                        <a class="code-accordions">
-                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
-                            <span class="in-bk-mid">Code</span>
-                        </a>
                         <pre><code class="hljs code xml">&lt;i class="nre-recruit-dk logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;<br>&lt;i class="nre-recruit-s-dk logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;</code></pre>
                     </div>
                     <div class="col-lg-6 col-sm-12">
@@ -249,10 +241,6 @@
                                 </i>
                             </div>
                         </div>
-                        <a class="code-accordions">
-                            <i class="re-g-gd-applications-page-code in-bk-mid" aria-hidden="true"></i>
-                            <span class="in-bk-mid">Code</span>
-                        </a>
                         <pre><code class="hljs code xml">&lt;i class="nre-recruit-wt logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;<br>&lt;i class="nre-recruit-s-wt logo--md" aria-hidden="true"&gt;<br>  &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;<br>&lt;/i&gt;</code></pre>
                     </div>
                 </div>
@@ -1151,10 +1139,10 @@
                     </div>
                 </div>
                 <div class="gui-cnt-row mb-32">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <div class="col-style">col-lg-6</div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <div class="col-style">col-lg-6</div>
                     </div>
                 </div>
@@ -1539,7 +1527,7 @@
                     </div>
                 </div>
                 <div class="gui-cnt-row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <h6 class="gui-sub-heading-ver1">
                             <font>Default</font>
                             <big>Checkbox</big>
@@ -1636,11 +1624,11 @@
                                         <span class="control"></span>
                                     </label>
                                 </li>
-                                </ui>
+                            </ui>
                         </div>
-                        <pre><code class="hljs code xml"></code></pre>
+                        <pre><code class="hljs code xml">&lt;input class="chk-inp" id="default1" type="checkbox"&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;input class="chk-inp" id="default1" type="checkbox"&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box box--md" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;label class="chk-lab" for="default1"&gt;<br>  &lt;i class="box box--lg" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;CheckBox&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;label class="toggle-control" for="toggle1"&gt;<br>  &lt;input type="checkbox" id="toggle1"&gt;<br>  &lt;span class="control"&gt;&lt;/span&gt;<br>&lt;/label&gt;</code></pre>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <h6 class="gui-sub-heading-ver1">
                             <font>Default</font>
                             <big>Radio</big>
@@ -1743,7 +1731,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <pre><code class="hljs code xml"></code></pre>
+                        <pre><code class="hljs code xml">&lt;input class="rad-inp" id="rad1" type="radio"&gt;<br>&lt;label class="rad-lab" for="rad1"&gt;<br>  &lt;i class="rad" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;Radio&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;input class="rad-inp" id="rad1" type="radio"&gt;<br>&lt;label class="rad-lab" for="rad1"&gt;<br>  &lt;i class="rad rad--md" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;Radio&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;input class="rad-inp" id="rad1" type="radio"&gt;<br>&lt;label class="rad-lab" for="rad1"&gt;<br>  &lt;i class="rad rad--lg" aria-hidden="true"&gt;&lt;/i&gt;<br>  &lt;font&gt;Radio&lt;/font&gt;<br>&lt;/label&gt;<br>&lt;label class="toggle-control" for="toggle2"&gt;<br>  &lt;input type="radio" name="radGroup2_1" id="toggle2"&gt;<br>  &lt;span class="control"&gt;&lt;/span&gt;<br>&lt;/label&gt;<br>&lt;label class="toggle-control" for="toggle3"&gt;<br>  &lt;input type="radio" name="radGroup2_1" id="toggle3"&gt;<br>  &lt;span class="control"&gt;&lt;/span&gt;<br>&lt;/label&gt;</code></pre>
                     </div>
                 </div>
             </div>
@@ -1762,7 +1750,7 @@
                     </div>
                 </div>
                 <div class="gui-cnt-row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <div class="gui-group">
                             <h6 class="gui-sub-heading-ver1">
                                 <font>Default</font>
@@ -1786,7 +1774,7 @@
                             <pre><code class="hljs code html">&lt;label class="badge badge--primary"&gt;1&lt;/label&gt;<br>&lt;label class="badge badge--secondary"&gt;2&lt;/label&gt;<br>&lt;label class="badge badge--tertiary"&gt;3&lt;/label&gt;<br>&lt;label class="badge badge--success"&gt;4&lt;/label&gt;<br>&lt;label class="badge badge--danger"&gt;5&lt;/label&gt;<br>&lt;label class="badge badge--warning"&gt;6&lt;/label&gt;<br>&lt;label class="badge badge--info"&gt;7&lt;/label&gt;<br>&lt;label class="badge badge--sky"&gt;8&lt;/label&gt;<br>&lt;label class="badge badge--dark"&gt;9&lt;/label&gt;<br>&lt;label class="badge badge--darkgrey"&gt;10&lt;/label&gt;<br></code></pre>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
                         <div class="gui-group">
                             <h6 class="gui-sub-heading-ver1">
                                 <font>Rounded</font>
@@ -1935,7 +1923,7 @@
         <section class="gui-block scrollspy" id="icons_ver1">
             <div class="container-fluid">
                 <div class="gui-icon-heading-ver1">
-                    <h3 class="gui-icon-heading-ver1-hd" data-heading="ICON">圖標</h3>
+                    <h3 class="gui-icon-heading-ver1-hd" data-heading="ICON">圖標 V.1</h3>
                     <div class="gui-icon-heading-ver1-bd">
                         <i class="re-g-df-photography-face-tracking" aria-hidden="true"></i>
                     </div>
@@ -5337,7 +5325,7 @@
         <section class="gui-block scrollspy" id="icons_ver2">
             <div class="container-fluid">
                 <div class="gui-icon-heading-ver1">
-                    <h3 class="gui-icon-heading-ver1-hd" data-heading="ICON">圖標</h3>
+                    <h3 class="gui-icon-heading-ver1-hd" data-heading="ICON">圖標 V.2</h3>
                     <div class="gui-icon-heading-ver1-bd">
                         <i class="re-g-df-photography-face-tracking" aria-hidden="true"></i>
                     </div>
@@ -11215,10 +11203,6 @@
     <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Chosen Select -->
     <script type="text/javascript" src="vendor/chosen/chosen.jquery.min.js"></script>
-    <!-- Gsap -->
-    <!-- <script type="text/javascript" src="vendor/gsap/dist/gsap.min.js"></script> -->
-    <!-- 404 -->
-    <!-- <script type="text/javascript" src="js/404/404.js"></script> -->
     <!-- mCustomScrollbar -->
     <script type="text/javascript" src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Loader -->
@@ -11226,11 +11210,16 @@
     <!-- Scrollspy -->
     <script type="text/javascript" src="vendor/simple-scrollspy/dist/simple-scrollspy.min.js"></script>
     <!-- GoTop -->
-    <script type="text/javascript" src="js/components/BcGotop.js"></script>
+    <script type="text/javascript" src="js/components/Gotop.js"></script>
     <!-- Main -->
     <script type="text/javascript" src="js/main.js"></script>
     <script>
     hljs.initHighlightingOnLoad();
+    $("#guiMenu").click(function() {
+        var menu = $('.gui-side-bar')
+        $(this).toggleClass('active');
+        menu.toggleClass('close').next('#guiMain').toggleClass('active');;
+    });
     window.onload = function() {
         scrollSpy('#guideMenu', {
             sectionClass: '.scrollspy',

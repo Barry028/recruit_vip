@@ -1,7 +1,7 @@
 ;
 (function($) {
   'use strict';
-  $.BcBackToGo = {
+  $.BackToGo = {
 
     _baseConfig: {},
 

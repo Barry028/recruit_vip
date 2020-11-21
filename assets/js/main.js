@@ -1,26 +1,26 @@
         ;
         (function($) {
 
-          $.BcMain = {
+          $.Main = {
 
             init: function() {
 
               $(document).ready(function(e) {
 
                 // Extends jQuery
-                $.BcMain.helpers.extendjQuery();
+                $.Main.helpers.extendjQuery();
                 // Botostrap Tootltips
                 $('[data-toggle="tooltip"]').tooltip();
                 // Botostrap Popover
                 $('[data-toggle="popover"]').popover();
 
                 // Set Background Image Dynamically
-                if ($('[data-bg-img-src]').length) $.BcMain.helpers.bgImage($('[data-bg-img-src]'));
+                if ($('[data-bg-img-src]').length) $.Main.helpers.bgImage($('[data-bg-img-src]'));
 
                 // Detect Internet Explorer (IE)
-                $.BcMain.helpers.detectIE();
+                $.Main.helpers.detectIE();
 
-                $.BcBackToGo.init('.js-go-to');
+                $.BackToGo.init('.js-go-to');
 
                 function testAnim(x) {
                   $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -171,6 +171,6 @@
 
           };
 
-          $.BcMain.init();
+          $.Main.init();
 
         })(jQuery);

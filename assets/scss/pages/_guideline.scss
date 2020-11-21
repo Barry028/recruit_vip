@@ -51,8 +51,13 @@ mark {
     }
 
     .gui-side-nav {
+
         .side-title {
             padding: 1rem 0 1rem 2rem;
+
+            @media all and (max-width: $screen-sm-min) {
+                display: none;
+            }
         }
 
         #guideMenu {
@@ -64,30 +69,44 @@ mark {
 
                 a {
                     display: block;
-                    color: rgba($white, 0.7);
+
+                    color: rgba($white, 0.66);
                     font-size: .75rem;
                     padding: .875rem 0 .875rem 2.75rem;
                     text-decoration: none;
-                    transition: .125s all ease-in-out;
+                    transition: $transition-base;
                     user-select: none;
 
-                    &:hover {
-                        background-color: rgba($white, 0.16);
+
+                    @media all and (max-width: $screen-sm-min) {
+                        font-size: 0;
+                        padding: .5rem .5rem;
+                        width: 4rem;
+                        height: 4rem;
+                    }
+
+                    &:hover,
+                    &.active {
+                        border-right: 4px solid lighten($primary, 5%);
+                        background-color: rgba($white, 0.12);
                         color: $white;
+                        font-size: .8125rem;
 
                         > i {
                             color: lighten($primary, 20%);
                             transform: translateY(-50%) scale(1.15);
+                            transition: $transition-base;
+
+                            @media all and (max-width: $screen-sm-min) {
+                                left: 50%;
+                                transform: translate(-50%, -50%) scale(1.15);
+                            }
                         }
-                    }
 
-                    &.active {
-                        background-color: rgba($white, 0.16);
-                        color: $white;
-
-                        i {
-                            color: lighten($primary, 20%);
-                            transform: translateY(-50%) scale(1.15);
+                        > font {
+                            @media all and (max-width: $screen-sm-min) {
+                                font-size: 0;
+                            }
                         }
                     }
 
@@ -98,11 +117,26 @@ mark {
                         left: 1rem;
                         top: 50%;
                         transform: translateY(-50%);
-                        transition: .125s all ease-in-out;
+                        transition: $transition-base;
+
+                        @media all and (max-width: $screen-sm-min) {
+                            font-size: 1.5rem;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        > font {
+                            @media all and (max-width: $screen-sm-min) {
+                                font-size: 0;
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+   &.close {
+        transform: translateX(-100%);
+        transition: $transition-base;
     }
 }
 
@@ -130,6 +164,93 @@ mark {
     .gui-header {
         padding: 1.5rem 1rem 1.25rem;
         text-transform: uppercase;
+
+        .btn--neu {
+            background-color: $white;
+            border-radius: 2px;
+            border: none;
+            box-shadow: -7px -7px 20px 0px $white, -4px -4px 5px 0px $white, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px $white, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px $white, inset 0px 0px 0px 0px #0001;
+            cursor: pointer;
+            margin-right: 2rem;
+            outline: none;
+            overflow: hidden;
+            padding: .875rem .625rem;
+            text-align: center;
+            transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+
+            &:active:after, &.active:after {
+                content: '';
+                border-radius: 2px;
+                box-shadow: 0px 0px 0px 0px $white, 0px 0px 0px 0px $white, 0px 0px 0px 0px #0001, 0px 0px 0px 0px #0001, inset -7px -7px 20px 0px $white, inset -4px -4px 5px 0px $white, inset 7px 7px 20px 0px #0003, inset 4px 4px 5px 0px #0001;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 100%;
+                opacity: 0;
+                transform: translateX(-100%);
+                background: rgba($white, 0.13);
+                background: linear-gradient(to right, rgba($white, 0.13) 0%, rgba($white, 0.13) 77%, rgba($white, 0.5) 92%, rgba($white, 0.3) 100%);
+                z-index: 1;
+            }
+
+            &:hover:before {
+                opacity: 1;
+                top: 0;
+                left: 0;
+                transform: translateX(0);
+                transition-property: transform, opacity;
+                transition-duration: 0.7s, 0.15s;
+                transition-timing-function: ease;
+            }
+
+            &.active {
+                left: 1rem;
+
+                .menu-icon__line {
+                    transform: translateX(0px) rotate(-45deg);
+                }
+
+                .menu-icon__line-left {
+                    transform: translate(pxTorem(2px), pxTorem(2px)) rotate(45deg);
+                }
+
+                .menu-icon__line-right {
+                    transform: translate(pxTorem(-3px), pxTorem(-3px)) rotate(45deg);
+                }
+            }
+
+            .lt-side-menu {
+                top: 3px;
+            }
+
+            .menu-icon__line {
+                height: 2px;
+                width: 2rem;
+                display: block;
+                background-color: $primary;
+                margin-bottom: 6px;
+                transition: margin 0.4s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+            }
+
+            .menu-icon__line-right {
+                width: 1.0625rem;
+                float: right;
+            }
+
+            .menu-icon__line-left {
+                width: 1.0625rem;
+            }
+        }
 
         h1 {
             font-size: 0;
@@ -300,105 +421,55 @@ mark {
 }
 
 /* sub heading */
+.gui-sub-heading-ver1 {
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    color: $dark;
 
-.gui-block {
-    .gui-sub-heading, .gui-sub-heading-ver1, .gui-sub-heading-ver2 {
-        margin-top: 1.25rem;
-        text-transform: uppercase;
-    }
-
-    .gui-sub-heading, .gui-sub-heading-ver1 {
-        font-size: 1rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
-        color: $dark;
-    }
-
-    .gui-sub-heading, .gui-sub-heading-ver1 font {
+    font {
         display: inline-block;
+        font-size: 50%;
+        font-weight: 700;
+        line-height: 0;
+        padding: .75rem .5rem;
+        user-select: none;
+        color: $white;
+        background-color: lighten($primary, 5%);
     }
 
-    .gui-sub-heading {
-        padding-right: .25rem;
-        letter-spacing: 1px;
-        border-bottom: lighten($primary, 10%) 1px solid;
-    }
+    big {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
 
-    .gui-sub-heading-ver1 {
-        margin-left: .5rem;
-
-        font {
-            font-size: 50%;
-            font-weight: 700;
-            line-height: 0;
-            padding: .75rem .5rem;
-            user-select: none;
-            color: $white;
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: -3rem;
+            width: 2.5rem;
+            height: 1px;
+            content: '';
             background-color: lighten($primary, 5%);
         }
 
-        big {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-
-            &:before {
-                position: absolute;
-                top: 50%;
-                left: -3rem;
-                width: 2.5rem;
-                height: 1px;
-                content: '';
-                background-color: lighten($primary, 5%);
-            }
-        }
-    }
-
-    .gui-sub-heading:first-letter, .gui-sub-heading-ver1 big:first-letter {
-        font-size: 125%;
-    }
-
-    .gui-sub-heading-ver2 {
         &:first-letter {
             font-size: 125%;
         }
-
-        font-size: 200%;
-        font-weight: 600;
-        margin-left: .5rem;
-        color: $grey;
     }
 }
 
 /* gui description */
-
 .gui-description {
     margin: 0 0 1.5rem 1.25rem;
     color: $grey;
     font-size: 0.875rem;
 }
 
-/* code-accordions  */
-.code-accordions {
-    font-size: 0;
-    display: block;
-    margin-top: .5rem;
-    margin-bottom: .25rem;
-    cursor: pointer;
-    text-align: right;
-
-    i {
-        font-size: 1.25rem;
-        margin-right: .5rem;
-    }
-
-    span {
-        text-decoration: underline;
-    }
-}
-
 /* Basic card */
-
 .control-card {
     &:not(.control-card--ver1):not(.control-card--ver2) {
         border-bottom: solid 3px $azure;
@@ -408,7 +479,7 @@ mark {
         &:hover {
             transform: translate3d(0, -0.625rem, 0);
             box-shadow: 0 0.5rem 1rem -0.5rem rgba($black, 0.24);
-            transition: .25s all ease-in-out;
+            transition: $transition-base;
         }
     }
 
@@ -453,8 +524,55 @@ mark {
 }
 
 /* colorpalette card */
-
 .list-palete {
+    @each $color, $value in $btn-colors {
+        .palete-color--#{$color} {
+            .palete-color__lighten {
+                background-color: $value;
+            }
+
+            .palete-color__darken {
+                background-color: darken($value, 7.5%);
+            }
+        }
+    }
+
+    @each $color, $value in $bg-colors {
+        .palete-color--#{$color} {
+            .palete-color__lighten {
+                background-color: $value;
+            }
+
+            .palete-color__darken {
+                background-color: darken($value, 7.5%);
+            }
+        }
+    }
+
+    @each $color, $value in $greys {
+        .palete-color--#{$color} {
+            .palete-color__lighten {
+                background-color: $value;
+            }
+
+            .palete-color__darken {
+                background-color: darken($value, 7.5%);
+            }
+        }
+    }
+
+    @each $color, $value in $brand-colors {
+        .palete-color--#{$color} {
+            .palete-color__lighten {
+                background-color: $value;
+            }
+
+            .palete-color__darken {
+                background-color: darken($value, 7.5%);
+            }
+        }
+    }
+
     font-size: 0;
     margin: 0 0 2rem 0;
     width: 100%;
@@ -541,56 +659,7 @@ mark {
     }
 }
 
-@each $color, $value in $btn-colors {
-    .palete-color--#{$color} {
-        .palete-color__lighten {
-            background-color: $value;
-        }
-
-        .palete-color__darken {
-            background-color: darken($value, 7.5%);
-        }
-    }
-}
-
-@each $color, $value in $bg-colors {
-    .palete-color--#{$color} {
-        .palete-color__lighten {
-            background-color: $value;
-        }
-
-        .palete-color__darken {
-            background-color: darken($value, 7.5%);
-        }
-    }
-}
-
-@each $color, $value in $greys {
-    .palete-color--#{$color} {
-        .palete-color__lighten {
-            background-color: $value;
-        }
-
-        .palete-color__darken {
-            background-color: darken($value, 7.5%);
-        }
-    }
-}
-
-@each $color, $value in $brand-colors {
-    .palete-color--#{$color} {
-        .palete-color__lighten {
-            background-color: $value;
-        }
-
-        .palete-color__darken {
-            background-color: darken($value, 7.5%);
-        }
-    }
-}
-
 /* Typography */
-
 .gui-block .ty-group {
     &:first-of-type {
         margin-bottom: 1rem;
@@ -599,160 +668,60 @@ mark {
     &:not(:first-of-type) {
         margin: 1rem 0;
     }
+
+    .ty-group-head {
+        display: inline-block;
+
+        &:not(:first-child) {
+            margin-top: .75rem;
+        }
+
+        &:before {
+            content: '';
+            background: rgba($tertiary, 0.24);
+            position: absolute;
+            left: 0.25rem;
+            bottom: 0.125rem;
+            width: calc(100% - 0.5rem);
+            height: .75rem;
+            transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+        }
+
+        margin-bottom: .25rem;
+
+        strong {
+            font-size: 120%;
+            color: $primary;
+        }
+
+        big {
+            font-weight: 700;
+            margin-right: .75rem;
+            margin-left: .75rem;
+        }
+
+        sub {
+            color: lighten($primary, 5%);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: 1px;
+        }
+
+        .ty-group-bd {
+            padding-left: .5rem;
+            color: $grey;
+        }
+    }
 }
 
-.ty-group .ty-group-head {
-    display: inline-block;
-
-    &:not(:first-child) {
-        margin-top: .75rem;
-    }
-
-    &:before {
-        content: '';
-        background: rgba($tertiary, 0.24);
-        position: absolute;
-        left: 0.25rem;
-        bottom: 0.125rem;
-        width: calc(100% - 0.5rem);
-        height: .75rem;
-        transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
-    }
-
-    margin-bottom: .25rem;
-
-    strong {
-        font-size: 120%;
-        color: $primary;
-    }
-
-    big {
-        font-weight: 700;
-        margin-right: .75rem;
-        margin-left: .75rem;
-    }
-
-    sub {
-        color: lighten($primary, 5%);
-    }
-}
-
-.gui-block .ty-group {
-    h1, h2, h3, h4, h5, h6 {
-        letter-spacing: 1px;
-    }
-}
-
-.ty-group .ty-group-bd {
-    padding-left: .5rem;
-    color: $grey;
-}
-
-.gui-group .img-sample {
-    width: 10rem;
-}
-
-.gui-block .gui-group {
+.gui-group {
     margin: 1rem 0 2rem;
-}
 
-.gui-group .btn {
-    margin-right: .5rem;
-    margin-bottom: 1rem;
-}
-
-.btn--neu {
-    background-color: $white;
-    border-radius: 3px;
-    border: none;
-    box-shadow: -7px -7px 20px 0px $white, -4px -4px 5px 0px $white, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px $white, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px $white, inset 0px 0px 0px 0px #0001;
-    cursor: pointer;
-    margin-right: 2rem;
-    outline: none;
-    overflow: hidden;
-    padding: .875rem .625rem;
-    text-align: center;
-    transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
-
-    &:active:after, &.active:after {
-        content: '';
-        border-radius: 3px;
-        box-shadow: 0px 0px 0px 0px $white, 0px 0px 0px 0px $white, 0px 0px 0px 0px #0001, 0px 0px 0px 0px #0001, inset -7px -7px 20px 0px $white, inset -4px -4px 5px 0px $white, inset 7px 7px 20px 0px #0003, inset 4px 4px 5px 0px #0001;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        left: 0;
+    .btn {
+        margin-right: .5rem;
+        margin-bottom: 1rem;
     }
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 100%;
-        opacity: 0;
-        transform: translateX(-100%);
-        background: rgba($white, 0.13);
-        z-index: 1;
-        background: linear-gradient(to right, rgba($white, 0.13) 0%, rgba($white, 0.13) 77%, rgba($white, 0.5) 92%, rgba($white, 0.3) 100%);
-    }
-
-    &:hover:before {
-        opacity: 1;
-        top: 0;
-        left: 0;
-        transform: translateX(0);
-        transition-property: transform, opacity;
-        transition-duration: 0.7s, 0.15s;
-        transition-timing-function: ease;
-    }
-
-    &.active {
-        left: 1rem;
-    }
-
-    .lt-side-menu {
-        top: 3px;
-    }
-
-    .menu-icon__line {
-        height: 2px;
-        width: 2rem;
-        display: block;
-        background-color: #68bbe3;
-        margin-bottom: 6px;
-        transition: margin 0.4s cubic-bezier(0.79, 0.21, 0.06, 0.81);
-    }
-
-    .menu-icon__line-right {
-        width: 1.0625rem;
-        float: right;
-    }
-
-    .menu-icon__line-left {
-        width: 1.0625rem;
-    }
-
-    .btn--neu.active {
-        .menu-icon__line {
-            transform: translateX(0px) rotate(-45deg);
-        }
-
-        .menu-icon__line-left {
-            transform: translate(3px, 3px) rotate(45deg);
-        }
-
-        .menu-icon__line-right {
-            transform: translate(-2px, -2px) rotate(45deg);
-        }
-    }
-}
-
-.gui-side-bar.close {
-    transform: translateX(-100%);
-    transition: 0.25s all ease-in-out;
 }
 
 .col-style {
@@ -773,43 +742,42 @@ mark {
     float: left;
     width: (100% / 12);
 
-        @media all and (max-width: $screen-lg-min) {
-            width: (100% / 10);
-        }
+    @media all and (max-width: $screen-lg-min) {
+        width: (100% / 10);
+    }
 
-        @media all and (max-width: $screen-md-min) {
-            width: (100% / 8);
-        }
+    @media all and (max-width: $screen-md-min) {
+        width: (100% / 8);
+    }
 
-        @media all and (max-width: $screen-sm-min) {
-            width: (100% / 6);
-        }
+    @media all and (max-width: $screen-sm-min) {
+        width: (100% / 6);
+    }
 
-        @media all and (max-width: $screen-xs-min) {
-            width: (100% / 4);
-        }
+    @media all and (max-width: $screen-xs-min) {
+        width: (100% / 4);
+    }
+
     .gui-icon-cnt {
         background-color: $smoke;
         display: block;
-        margin: .5rem .25rem;
         padding: 1rem .5rem .5rem;
         text-align: center;
-        border-radius: 2px;
-        box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px $white inset;
+        box-shadow: 4px 4px 4px 0 #d1d9e6 inset, -4px -4px 4px 0 $white inset;
 
         > a {
             display: block;
         }
 
         i {
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
 
         p {
             font-family: $font-family-monospace;
             font-size: .75rem;
-            padding: .5rem;
-            background-color: $white;
+            color: $grey;
+            background-color: $water;
             margin-top: 1rem;
             white-space: nowrap;
             overflow-x: auto;

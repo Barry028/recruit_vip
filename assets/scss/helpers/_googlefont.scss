@@ -167,48 +167,22 @@ $google-font-subsets: ("arabic": false, "bengali": false, "cyrillic": false, "cy
 // //  $text  :  Limit request to these characters (quoted string)
 // //
 // //  @include google-font($name, [$weight, $style, $text]);
-// //
-// @include google-font(Lato, 300);
-// @include google-font(Open Sans, 400, italic);
-// @include google-font(Candal);
-// @include google-font(Rubik, 300 400 500 700 900);
-// @include google-font(Merriweather, 300 400 700 900);
-// @include google-font(Source Code Pro, 200 300 400 500 600 700 900);
-
-// //  CSS output:
-// @import url("https://fonts.googleapis.com/css?family=Lato:300");
-// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400i");
-// @import url("https://fonts.googleapis.com/css2?family=Candal&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;900&display=swap");
-// @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
-// // @import url("https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple");
 
 //  Conbine syntax:
 //  By placing google-font includes inside a google-font include (without arguments)
 //  nested includes will be merged into a single import
 @include google-font {
-    // <= combine
-    // @include google-font(Material Icons);
-    // @include google-font(Open Sans, 300 400 700, normal);
-    // @include google-font(Open Sans, 300 400 700, italic normal);
-    // @include google-font(Lato, 300 400i 700i);
-    // @include google-font(Lato, 300 700, italic normal);
-
-    // @include google-font(Candal);
-    // @include google-font(Rubik, 300 400 700 900);
     @include google-font(Noto Serif TC, 100 300 400 500 700 900);
-    @include google-font(IBM Plex Mono, 100 200 300 400 500 600 700);
     @include google-font(Noto Sans TC, 100 300 400 500 700 900);
+    @include google-font(IBM Plex Mono, 100 200 300 400 500 600 700);
 }
 
 //  CSS output:
 //  Note! as Slapo 27px is limited to specific characters it will
 //  not be merged with the other imports
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&display=swap");
 
 
 
@@ -219,4 +193,4 @@ $google-font-subsets: ("arabic": false, "bengali": false, "cyrillic": false, "cy
 
 
 
-// 
+ 
