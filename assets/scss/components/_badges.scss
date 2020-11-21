@@ -15,5 +15,9 @@
             @include badge-variant($value);
         }
     }
+
+     &.badge--rounded {
+        border-radius: 50%;
+    }
 }
 
