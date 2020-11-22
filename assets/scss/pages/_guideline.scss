@@ -3,19 +3,6 @@
 /** –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Pages > Guideline
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-html {
-    background-color: $white;
-}
-
-hr {
-    border-bottom: 1px solid $grey-100;
-}
-
-mark {
-    background-color: $light;
-    color: $danger;
-    padding: 0 .25rem;
-}
 
 .hljs.code {
     font-size: .75rem;
@@ -51,7 +38,6 @@ mark {
     }
 
     .gui-side-nav {
-
         .side-title {
             padding: 1rem 0 1rem 2rem;
 
@@ -80,14 +66,12 @@ mark {
 
                 a {
                     display: block;
-
                     color: rgba($white, 0.66);
                     font-size: .75rem;
                     padding: .875rem 0 .875rem 2.75rem;
                     text-decoration: none;
                     transition: $transition-base;
                     user-select: none;
-
 
                     @media all and (max-width: $screen-sm-min) {
                         font-size: 0;
@@ -135,6 +119,7 @@ mark {
                             left: 50%;
                             transform: translate(-50%, -50%);
                         }
+
                         > font {
                             @media all and (max-width: $screen-sm-min) {
                                 font-size: 0;
@@ -145,17 +130,39 @@ mark {
             }
         }
     }
-   &.close {
+
+    &.close {
         transform: translateX(-100%);
         transition: $transition-base;
     }
 }
 
 .gui-main-cnt {
+    background-color: $white;
     float: left;
     overflow: hidden;
     margin-left: 16rem;
     width: calc(100% - 16rem);
+
+    hr {
+        border-bottom: 1px solid $grey-100;
+    }
+
+    mark {
+        background-color: $light;
+        color: $danger;
+        padding: 0 .25rem;
+    }
+
+    :not(.hljs)code {
+        background-color: $grey-300;
+
+        mark {
+            background-color: transparent;
+            color: $danger;
+            padding: 0 .25rem;
+        }
+    }
 
     &.active {
         margin-left: 0;
@@ -391,6 +398,17 @@ mark {
             white-space: nowrap;
             opacity: .08;
             font-weight: 500;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -.75rem;
+            left: -1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba($primary, 0.12);
         }
 
         &:first-letter {

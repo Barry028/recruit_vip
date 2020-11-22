@@ -627,15 +627,15 @@ $dropdown-divider-bg:				$default!default;
 
 //== Alert Variables
 $alert-padding-y:                   .75rem 							!default;
-$alert-padding-x:                   1.5rem 							!default;
+$alert-padding-x:                   1.25rem 							!default;
 $alert-margin-bottom:               1rem 							!default;
 $alert-border-radius:               $border-radius 					!default;
 $alert-link-font-weight:            $font-weight-bold 				!default;
 $alert-border-width:                $border-width 					!default;
 
-$alert-bg-level:                    -11 							!default;
-$alert-border-level:                -11								!default;
-$alert-color-level:                 8								!default;
+$alert-bg-level:                    -12 							!default;
+$alert-border-level:                -10								!default;
+$alert-color-level:                 6								!default;
 
 //== Close
 $close-font-size:                   $font-size-base * 1.5 			!default;
